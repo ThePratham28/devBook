@@ -5,7 +5,7 @@ import {
     getNotesByBookmark,
     updateNote,
 } from "../controllers/note.controller.js";
-import { authenticate } from "passport";
+import { authenticate } from "../middlewares/auth.middleware.js";
 const router = Router();
 
 router.post("/", authenticate, createNote);
