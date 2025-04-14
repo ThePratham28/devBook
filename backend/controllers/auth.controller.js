@@ -372,7 +372,7 @@ export const resetForm = async (req, res) => {
         </head>
         <body>
             <h1>Reset your Password</h1>
-            <form action="http://localhost:8080/api/auth/reset/${token}" method="POST">
+            <form action="${process.env.BASE_URL}/api/auth/reset/${token}" method="POST">
                 <label for="newPassword">New Password:</label>
                 <input type="password" id="newPassword" name="newPassword" required>
                 <button type="submit">Reset Password</button>
