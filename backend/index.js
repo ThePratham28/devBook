@@ -13,6 +13,9 @@ import bookmarkRoutes from "./routes/bookmark.routes.js";
 import tagRoutes from "./routes/tag.routes.js";
 import categoryRoutes from "./routes/category.routes.js";
 import noteRoutes from "./routes/note.routes.js";
+import rateLimit from "express-rate-limit";
+import helmet from "helmet";
+import cors from "cors";
 
 dotenv.config();
 const app = express();
@@ -30,6 +33,24 @@ app.use(
         },
     })
 );
+
+app.use(
+    cors({
+        origin: "*",
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        credentials: true,
+    })
+);
+
+app.use(
+    rateLimit({
+        windowMs: 15 * 60 * 1000, // 15 minutes
+        max: 100, // Limit each IP to 100 requests per windowMs
+        message: "Too many requests, please try again later.",
+    })
+);
+
+app.use(helmet());
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -59,3 +80,36 @@ app.use("/api/bookmarks", bookmarkRoutes);
 app.use("/api/tags", tagRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/notes", noteRoutes);
+
+app.use((req, res) => {
+    res.status(404).json({
+        success: false,
+        message: "Route not found",
+    });
+});
+
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({
+        success: false,
+        message: "Internal server error",
+    });
+});
+
+import swaggerJsDoc from "swagger-jsdoc";
+import swaggerUi from "swagger-ui-express";
+
+const swaggerOptions = {
+    swaggerDefinition: {
+        openapi: "3.0.0",
+        info: {
+            title: "Bookmark Manager API",
+            version: "1.0.0",
+            description: "API documentation for the Developer Bookmark Manager",
+        },
+    },
+    apis: ["./routes/*.js"],
+};
+
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
