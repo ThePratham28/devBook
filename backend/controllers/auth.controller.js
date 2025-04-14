@@ -1,10 +1,12 @@
-import { User } from "../models/user.model.js";
-import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
 import crypto from "crypto";
 import nodemailer from "nodemailer";
 import { Op } from "sequelize";
 import { verificationEmail, welcomeEmail } from "../services/email.service.js";
+
+import models from "../models/model.js";
+import { verify } from "argon2";
+const { User } = models;
 
 export const signup = async (req, res) => {
     const { email, password, name } = req.body;
@@ -127,7 +129,8 @@ export const login = async (req, res) => {
             });
         }
 
-        const isPasswordValid = await bcryptjs.compare(password, user.password);
+        const isPasswordValid = await verify(user.password, password);
+
         if (!isPasswordValid) {
             return res
                 .status(400)
@@ -402,8 +405,13 @@ export const resetPassword = async (req, res) => {
             });
         }
 
-        const hashedPassword = await bcryptjs.hash(newPassword, 10);
-        user.password = hashedPassword; // Hash the password before saving
+        if (!newPassword) {
+            return res.status(400).json({
+                success: false,
+                message: "New password is required",
+            });
+        }
+        user.password = newPassword;
         user.resetPasswordToken = null;
         user.resetPasswordExpiresAt = null;
 

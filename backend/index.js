@@ -10,7 +10,9 @@ import logger from "./utils/logger.js";
 
 import authRoutes from "./routes/authRoutes.js";
 import bookmarkRoutes from "./routes/bookmark.routes.js";
-
+import tagRoutes from "./routes/tag.routes.js";
+import categoryRoutes from "./routes/category.routes.js";
+import noteRoutes from "./routes/note.routes.js";
 
 dotenv.config();
 const app = express();
@@ -54,3 +56,6 @@ app.get("/", (req, res) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/bookmarks", bookmarkRoutes);
+app.use("/api/tags", tagRoutes);
+app.use("/api/categories", categoryRoutes);
+app.use("/api/notes", noteRoutes);

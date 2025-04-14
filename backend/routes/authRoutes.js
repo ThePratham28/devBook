@@ -11,7 +11,7 @@ import {
     resetPassword,
     verifyEmail,
     resendVerificationEmail,
-} from "../controllers/authController.js";
+} from "../controllers/auth.controller.js";
 import passport from "passport";
 
 router.post("/signup", signup);
@@ -27,7 +27,6 @@ router.get("/reset-password/:token", resetForm);
 
 // submit new password
 router.post("/reset/:token", resetPassword);
-
 
 // Verify email
 router.get("/verify-email/:token", verifyEmail);

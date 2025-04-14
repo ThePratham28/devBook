@@ -1,6 +1,7 @@
+import { Op } from "sequelize";
 import models from "../models/model.js";
 
-const { Bookmark } = models;
+const { Bookmark, Tag, Category, BookmarkTag } = models;
 
 export const createBookmark = async (req, res) => {
     try {
@@ -29,12 +30,72 @@ export const createBookmark = async (req, res) => {
 export const getBookmarks = async (req, res) => {
     try {
         const userId = req.user.id;
-        const bookmarks = await Bookmark.findAll({
-            where: { userId },
-            order: [["createdAt", "DESC"]],
-        });
 
-        res.status(200).json({ success: true, data: bookmarks });
+        if (!userId) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid user ID",
+            });
+        }
+        
+        // Pagination parameters
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 10;
+        const offset = (page - 1) * limit;
+
+        // Filter parameters
+        const { tag, category, search} = req.query;
+
+        // Sorting parameters
+        const sortBy = req.query.sortBy || "createdAt";
+        const sortOrder = req.query.sortOrder === "desc" ? "DESC" : "ASC";
+
+        const where = { userId };
+        const include = [];
+
+        if (tag) {
+            include.push({
+                model: Tag,
+                where: { name: tag },
+                through: { attributes: [] }, // Exclude the join table attributes
+            });
+        }
+
+        if (category) {
+            include.push({
+                model: Category,
+                where: { name: category },
+            });
+        }
+
+        if(search) {
+            where[Op.or] = [
+                {title: {[Op.iLike]: `%${search}%`}},
+                {description: {[Op.iLike]: `%${search}%`}}
+            ];
+        }
+
+        const { rows: bookmarks, count: total } =
+            await Bookmark.findAndCountAll({
+                where,
+                include,
+                limit,
+                offset,
+                order: [[sortBy, sortOrder]],
+            });
+
+        const totalPages = Math.ceil(total / limit);
+
+        res.status(200).json({
+            success: true,
+            data: bookmarks,
+            meta: {
+                total,
+                totalPages,
+                currpage: page,
+                perPage: limit,
+            },
+        });
     } catch (error) {
         console.error("Error fetching bookmarks:", error);
         res.status(500).json({
@@ -49,6 +110,13 @@ export const getBookmarkById = async (req, res) => {
     try {
         const { id } = req.params;
         const userId = req.user.id;
+
+        if (!id || !userId) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid bookmark ID or user ID",
+            });
+        }
 
         const bookmark = await Bookmark.findOne({
             where: { id, userId },
@@ -126,9 +194,13 @@ export const deleteBookmark = async (req, res) => {
 
         await bookmark.destroy();
 
-        res.status(200).json({ success: true, message: "Bookmark deleted" });
+        res.status(200).json({
+            success: true,
+            message: "Bookmark deleted",
+            data: null,
+        });
     } catch (error) {
-        console.error("Error deleting bookmark:", error);
+        console.error(`Error deleting bookmark with ID ${id}:`, error);
         res.status(500).json({
             success: false,
             message: "Failed to delete bookmark",

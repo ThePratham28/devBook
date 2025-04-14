@@ -7,9 +7,13 @@ export default (sequelize) => {
                 foreignKey: "userId",
                 onDelete: "CASCADE",
             });
-            Bookmark.belongsTo(models.Tag, {
+            Bookmark.belongsToMany(models.Tag, {
                 through: models.BookmarkTag,
                 foreignKey: "bookmarkId",
+            });
+            Bookmark.belongsTo(models.Category, {
+                foreignKey: "categoryId",
+                onDelete: "CASCADE",
             });
             Bookmark.hasMany(models.Note, {
                 foreignKey: "bookmarkId",
@@ -23,6 +27,7 @@ export default (sequelize) => {
             title: {
                 type: DataTypes.STRING,
                 allowNull: false,
+                unique: true,
             },
             url: {
                 type: DataTypes.STRING,

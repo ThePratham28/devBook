@@ -7,6 +7,10 @@ export default (sequelize) => {
                 foreignKey: "userId",
                 onDelete: "CASCADE",
             });
+            Category.hasMany(models.Bookmark, {
+                foreignKey: "categoryId",
+                onDelete:"CASCADE",
+            })
         }
     }
 
