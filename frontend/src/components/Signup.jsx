@@ -1,149 +1,214 @@
-import React from "react";
+// src/components/Signup.jsx
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
-export const Signup = () => {
+const Signup = () => {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
+    const [loading, setLoading] = useState(false);
+
+    const { signup } = useAuth();
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError("");
+        setSuccess("");
+
+        // Form validation
+        if (!name || !email || !password || !confirmPassword) {
+            return setError("All fields are required");
+        }
+
+        if (password !== confirmPassword) {
+            return setError("Passwords do not match");
+        }
+
+        if (password.length < 6) {
+            return setError("Password must be at least 6 characters");
+        }
+
+        try {
+            setLoading(true);
+            const result = await signup(name, email, password);
+            setSuccess(
+                result.message ||
+                    "Account created successfully! Check your email for verification."
+            );
+
+            // Don't navigate, let user check email
+            // navigate('/login');
+        } catch (err) {
+            setError(err.message || "Failed to create an account");
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gray-100">
-            
-            <div className="w-[400px] bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200">
-                <div className="p-8">
-                    <div className="text-center mb-8">
-                        <h1 className="text-2xl font-bold text-gray-800 mb-2">
-                            Create your account
-                        </h1>
-                        <p className="text-gray-500">
-                            Sign up to get started with our platform
-                        </p>
-                    </div>
+        <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-md w-full space-y-8">
+                <div>
+                    <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+                        Create your account
+                    </h2>
+                    <p className="mt-2 text-center text-sm text-gray-600">
+                        Or{" "}
+                        <Link
+                            to="/login"
+                            className="font-medium text-indigo-600 hover:text-indigo-500"
+                        >
+                            sign in to your account
+                        </Link>
+                    </p>
+                </div>
 
-                    <form className="space-y-4">
+                {error && (
+                    <div
+                        className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+                        role="alert"
+                    >
+                        <span className="block sm:inline">{error}</span>
+                    </div>
+                )}
+
+                {success && (
+                    <div
+                        className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative"
+                        role="alert"
+                    >
+                        <span className="block sm:inline">{success}</span>
+                    </div>
+                )}
+
+                <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+                    <div className="rounded-md shadow-sm -space-y-px">
                         <div>
-                            <label
-                                htmlFor="name"
-                                className="block text-sm font-medium text-gray-700 mb-1"
-                            >
+                            <label htmlFor="name" className="sr-only">
                                 Full Name
                             </label>
                             <input
-                                type="text"
                                 id="name"
-                                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 outline-none"
-                                placeholder="John Doe"
+                                name="name"
+                                type="text"
+                                autoComplete="name"
                                 required
+                                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                                placeholder="Full Name"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
                             />
                         </div>
-
                         <div>
-                            <label
-                                htmlFor="email"
-                                className="block text-sm font-medium text-gray-700 mb-1"
-                            >
-                                Email Address
+                            <label htmlFor="email-address" className="sr-only">
+                                Email address
                             </label>
                             <input
+                                id="email-address"
+                                name="email"
                                 type="email"
-                                id="email"
-                                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 outline-none"
-                                placeholder="john@example.com"
+                                autoComplete="email"
                                 required
+                                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                                placeholder="Email address"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
-
                         <div>
-                            <label
-                                htmlFor="password"
-                                className="block text-sm font-medium text-gray-700 mb-1"
-                            >
+                            <label htmlFor="password" className="sr-only">
                                 Password
                             </label>
                             <input
-                                type="password"
                                 id="password"
-                                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 outline-none"
-                                placeholder="••••••••"
+                                name="password"
+                                type="password"
+                                autoComplete="new-password"
                                 required
+                                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                                placeholder="Password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                             />
-                            <p className="mt-1 text-xs text-gray-500">
-                                Must be at least 8 characters
-                            </p>
                         </div>
-
-                        <button
-                            type="submit"
-                            className="w-full bg-primary-600 text-white py-2 px-4 rounded-md font-medium hover:bg-primary-700 active:bg-primary-800 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0"
-                        >
-                            Sign Up
-                        </button>
-                        {/* Next: "Add checkbox for terms and conditions" */}
-                    </form>
-
-                    <div className="mt-6 flex items-center">
-                        <div className="flex-grow h-px bg-gray-300"></div>
-                        <span className="mx-4 text-sm text-gray-500">OR</span>
-                        <div className="flex-grow h-px bg-gray-300"></div>
+                        <div>
+                            <label
+                                htmlFor="confirm-password"
+                                className="sr-only"
+                            >
+                                Confirm Password
+                            </label>
+                            <input
+                                id="confirm-password"
+                                name="confirm-password"
+                                type="password"
+                                autoComplete="new-password"
+                                required
+                                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                                placeholder="Confirm Password"
+                                value={confirmPassword}
+                                onChange={(e) =>
+                                    setConfirmPassword(e.target.value)
+                                }
+                            />
+                        </div>
                     </div>
 
-                    <button className="mt-6 w-full flex items-center justify-center gap-3 border border-gray-300 rounded-md py-2 px-4 hover:bg-gray-50 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
-                        <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 48 48"
-                            xmlns="http://www.w3.org/2000/svg"
+                    <div>
+                        <button
+                            type="submit"
+                            disabled={loading}
+                            className={`group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${
+                                loading ? "opacity-70 cursor-not-allowed" : ""
+                            }`}
                         >
-                            <path
-                                fill="#EA4335"
-                                d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"
-                            />
-                            <path
-                                fill="#4285F4"
-                                d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"
-                            />
-                            <path
-                                fill="#FBBC05"
-                                d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"
-                            />
-                            <path
-                                fill="#34A853"
-                                d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"
-                            />
-                            <path fill="none" d="M0 0h48v48H0z" />
-                        </svg>
-                        <span className="font-medium">
-                            Continue with Google
-                        </span>
-                    </button>
-                    {/* Next: "Add sign in with Apple button" */}
+                            {loading ? "Signing up..." : "Sign up"}
+                        </button>
+                    </div>
+                </form>
 
-                    <p className="mt-8 text-center text-sm text-gray-600">
-                        Already have an account?
-                        <a
-                            href="https://webcrumbs.cloud/placeholder"
-                            className="ml-1 font-medium text-primary-600 hover:text-primary-500 hover:underline transition-all duration-200"
-                        >
-                            Sign in
-                        </a>
-                    </p>
-                    {/* Next: "Add forgot password link" */}
-                </div>
+                <div className="mt-6">
+                    <div className="relative">
+                        <div className="absolute inset-0 flex items-center">
+                            <div className="w-full border-t border-gray-300"></div>
+                        </div>
+                        <div className="relative flex justify-center text-sm">
+                            <span className="px-2 bg-gray-50 text-gray-500">
+                                Or continue with
+                            </span>
+                        </div>
+                    </div>
 
-                <div className="bg-gray-50 px-8 py-4 border-t border-gray-200">
-                    <p className="text-xs text-center text-gray-500">
-                        By signing up, you agree to our
+                    <div className="mt-6">
                         <a
-                            href="https://webcrumbs.cloud/placeholder"
-                            className="text-primary-600 hover:text-primary-500 hover:underline transition-colors duration-200 mx-1"
+                            href="http://localhost:8080/api/auth/google"
+                            className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
-                            Terms of Service
+                            <svg
+                                className="h-5 w-5 mr-2"
+                                viewBox="0 0 24 24"
+                                width="24"
+                                height="24"
+                            >
+                                <g transform="matrix(1, 0, 0, 1, 0, 0)">
+                                    <path
+                                        d="M21.35,11.1H12.18V13.83H18.69C18.36,17.64 15.19,19.27 12.19,19.27C8.36,19.27 5,16.25 5,12C5,7.9 8.2,4.73 12.2,4.73C15.29,4.73 17.1,6.7 17.1,6.7L19,4.72C19,4.72 16.56,2 12.1,2C6.42,2 2.03,6.8 2.03,12C2.03,17.05 6.16,22 12.25,22C17.6,22 21.5,18.33 21.5,12.91C21.5,11.76 21.35,11.1 21.35,11.1V11.1Z"
+                                        fill="#4285F4"
+                                    ></path>
+                                </g>
+                            </svg>
+                            Sign up with Google
                         </a>
-                        and
-                        <a
-                            href="https://webcrumbs.cloud/placeholder"
-                            className="text-primary-600 hover:text-primary-500 hover:underline transition-colors duration-200 ml-1"
-                        >
-                            Privacy Policy
-                        </a>
-                    </p>
+                    </div>
                 </div>
             </div>
         </div>
     );
 };
+
+export default Signup;

@@ -1,323 +1,542 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-toastify";
+import {
+    FiArrowLeft,
+    FiLink,
+    FiSave,
+    FiPlus,
+    FiEye,
+    FiEyeOff,
+} from "react-icons/fi";
+import { BiCategoryAlt } from "react-icons/bi";
+import { AiOutlineTags } from "react-icons/ai";
+
+const API_URL = "http://localhost:8080/api";
 
 const CreateBookmark = () => {
-  // Sample data for existing tags and categories
-  const existingTags = ['JavaScript', 'React', 'Node.js', 'CSS', 'HTML', 'API', 'Database', 'Git', 'Frontend', 'Backend'];
-  const existingCategories = ['Documentation', 'Tutorials', 'Tools', 'Libraries', 'Frameworks', 'Articles', 'References'];
+    const navigate = useNavigate();
+    const [title, setTitle] = useState("");
+    const [url, setUrl] = useState("");
+    const [description, setDescription] = useState("");
+    const [isPublic, setIsPublic] = useState(false);
+    const [categoryId, setCategoryId] = useState("");
+    const [tags, setTags] = useState([]);
+    const [availableCategories, setAvailableCategories] = useState([]);
+    const [availableTags, setAvailableTags] = useState([]);
+    const [newCategory, setNewCategory] = useState("");
+    const [newTag, setNewTag] = useState("");
+    const [loading, setLoading] = useState(false);
 
-  // Form state
-  const [formData, setFormData] = useState({
-    url: '',
-    title: '',
-    description: ''
-  });
-  
-  const [selectedTags, setSelectedTags] = useState([]);
-  const [newTag, setNewTag] = useState('');
-  
-  const [category, setCategory] = useState('');
-  const [newCategory, setNewCategory] = useState('');
-  const [isAddingNewCategory, setIsAddingNewCategory] = useState(false);
-  
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [message, setMessage] = useState('');
+    // Fetch categories and tags
+    const fetchMetadata = async () => {
+        try {
+            setLoading(true);
+            const token = localStorage.getItem("token");
+            const config = {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            };
 
-  // Handle input changes
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
+            const [categoriesRes, tagsRes] = await Promise.all([
+                axios.get(`${API_URL}/categories`, config),
+                axios.get(`${API_URL}/tags`, config),
+            ]);
 
-  // Auto-populate title when URL changes
-  useEffect(() => {
-    if (formData.url) {
-      // This would typically fetch metadata from the URL to auto-populate the title
-      // For demo purposes, we'll simulate a delay
-      setIsLoading(true);
-      setTimeout(() => {
-        // In a real app, this would be an API call to get the page title
-        if (formData.url.includes('github')) {
-          setFormData(prev => ({ ...prev, title: 'GitHub Repository' }));
-        } else if (formData.url.includes('react')) {
-          setFormData(prev => ({ ...prev, title: 'React Documentation' }));
+            setAvailableCategories(categoriesRes.data.data);
+            setAvailableTags(tagsRes.data.data);
+        } catch (error) {
+            console.error("Error fetching metadata:", error);
+            toast.error("Failed to load categories and tags");
+        } finally {
+            setLoading(false);
         }
-        setIsLoading(false);
-      }, 500);
-    }
-  }, [formData.url]);
+    };
 
-  // Handle tag selection
-  const handleTagToggle = (tag) => {
-    setSelectedTags(prev => 
-      prev.includes(tag) 
-        ? prev.filter(t => t !== tag) 
-        : [...prev, tag]
-    );
-  };
+    useEffect(() => {
+        fetchMetadata();
+    }, []);
 
-  // Add new tag
-  const handleAddNewTag = () => {
-    if (newTag && !existingTags.includes(newTag) && !selectedTags.includes(newTag)) {
-      setSelectedTags(prev => [...prev, newTag]);
-      setNewTag('');
-    }
-  };
+    // Handle form submission
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-  // Handle category selection
-  const handleCategoryChange = (e) => {
-    const value = e.target.value;
-    if (value === 'add_new') {
-      setIsAddingNewCategory(true);
-      setCategory('');
-    } else {
-      setIsAddingNewCategory(false);
-      setCategory(value);
-    }
-  };
+        try {
+            setLoading(true);
+            const token = localStorage.getItem("token");
+            const config = {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            };
 
-  // Add new category
-  const handleAddNewCategory = () => {
-    if (newCategory && !existingCategories.includes(newCategory)) {
-      setCategory(newCategory);
-      setIsAddingNewCategory(false);
-      setNewCategory('');
-    }
-  };
+            const payload = {
+                title,
+                url,
+                description,
+                isPublic,
+                categoryId,
+                tags,
+            };
 
-  // Form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setError('');
-    setMessage('');
+            await axios.post(`${API_URL}/bookmarks`, payload, config);
+            toast.success("Bookmark created successfully");
+            navigate("/dashboard");
+        } catch (error) {
+            console.error("Error creating bookmark:", error);
+            toast.error("Failed to create bookmark");
+        } finally {
+            setLoading(false);
+        }
+    };
 
-    // Form validation
-    if (!formData.url) {
-      setError('URL is required');
-      return;
-    }
+    // Handle adding a new category
+    const handleAddCategory = async () => {
+        if (!newCategory.trim()) {
+            toast.error("Category name cannot be empty");
+            return;
+        }
 
-    if (!formData.title) {
-      setError('Title is required');
-      return;
-    }
+        try {
+            setLoading(true);
+            const token = localStorage.getItem("token");
+            const config = {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            };
 
-    // Here you would typically send the data to your backend
-    setIsLoading(true);
-    
-    // Simulate API call
-    setTimeout(() => {
-      setIsLoading(false);
-      setMessage('Bookmark created successfully!');
-      
-      // Reset form
-      setFormData({
-        url: '',
-        title: '',
-        description: ''
-      });
-      setSelectedTags([]);
-      setCategory('');
-    }, 1000);
-  };
+            const response = await axios.post(
+                `${API_URL}/categories`,
+                { name: newCategory },
+                config
+            );
 
-  return (
-    <div className="min-h-screen bg-gray-100 py-8">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h1 className="text-2xl font-bold text-gray-900 mb-6">Add New Bookmark</h1>
-          
-          {error && (
-            <div className="mb-4 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-md">
-              <p className="text-sm">{error}</p>
-            </div>
-          )}
-          
-          {message && (
-            <div className="mb-4 bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-md">
-              <p className="text-sm">{message}</p>
-            </div>
-          )}
-          
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* URL Field */}
-            <div>
-              <label htmlFor="url" className="block text-sm font-medium text-gray-700 mb-1">
-                URL <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="url"
-                id="url"
-                name="url"
-                value={formData.url}
-                onChange={handleInputChange}
-                placeholder="https://example.com"
-                required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-            
-            {/* Title Field */}
-            <div>
-              <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-1">
-                Title <span className="text-red-500">*</span>
-                {isLoading && <span className="ml-2 text-sm text-gray-500">(Auto-populating...)</span>}
-              </label>
-              <input
-                type="text"
-                id="title"
-                name="title"
-                value={formData.title}
-                onChange={handleInputChange}
-                placeholder="Enter bookmark title"
-                required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-            
-            {/* Description Field */}
-            <div>
-              <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-1">
-                Description/Notes
-              </label>
-              <textarea
-                id="description"
-                name="description"
-                value={formData.description}
-                onChange={handleInputChange}
-                placeholder="Add notes about this bookmark"
-                rows="3"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              ></textarea>
-            </div>
-            
-            {/* Tags Selection */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Tags
-              </label>
-              <div className="mb-2 flex flex-wrap gap-2">
-                {existingTags.map(tag => (
-                  <button
-                    key={tag}
-                    type="button"
-                    onClick={() => handleTagToggle(tag)}
-                    className={`px-3 py-1 rounded-full text-sm font-medium ${
-                      selectedTags.includes(tag) 
-                        ? 'bg-blue-100 text-blue-800 border border-blue-300' 
-                        : 'bg-gray-100 text-gray-800 border border-gray-300 hover:bg-gray-200'
-                    }`}
-                  >
-                    {tag}
-                  </button>
-                ))}
-              </div>
-              <div className="flex">
-                <input
-                  type="text"
-                  placeholder="Add a new tag"
-                  value={newTag}
-                  onChange={(e) => setNewTag(e.target.value)}
-                  className="flex-grow px-3 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
+            setAvailableCategories([
+                ...availableCategories,
+                response.data.data,
+            ]);
+            setCategoryId(response.data.data.id); // Automatically select the new category
+            setNewCategory("");
+            toast.success("Category added successfully");
+        } catch (error) {
+            console.error("Error adding category:", error);
+            toast.error("Failed to add category");
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    // Handle adding a new tag
+    const handleAddTag = async () => {
+        if (!newTag.trim()) {
+            toast.error("Tag name cannot be empty");
+            return;
+        }
+
+        try {
+            setLoading(true);
+            const token = localStorage.getItem("token");
+            const config = {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            };
+
+            const response = await axios.post(
+                `${API_URL}/tags`,
+                { name: newTag },
+                config
+            );
+
+            setAvailableTags([...availableTags, response.data.data]);
+            setTags([...tags, response.data.data.id]); // Automatically select the new tag
+            setNewTag("");
+            toast.success("Tag added successfully");
+        } catch (error) {
+            console.error("Error adding tag:", error);
+            toast.error("Failed to add tag");
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    // Auto-extract title from URL
+    const extractTitleFromUrl = async () => {
+        if (!url) {
+            toast.error("Please enter a URL first");
+            return;
+        }
+
+        try {
+            setLoading(true);
+            // Here you could add logic to extract title from URL metadata
+            // This would typically be a server-side function that fetches the URL and extracts the page title
+            // For now, let's just assume we set a placeholder
+            setTitle("Title extracted from URL");
+            toast.info("Title extracted from URL (demonstration)");
+        } catch (error) {
+            console.error("Error extracting title:", error);
+            toast.error("Failed to extract title from URL");
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    // Display selected tags
+    const selectedTagNames = availableTags
+        .filter((tag) => tags.includes(tag.id.toString()))
+        .map((tag) => tag.name);
+
+    return (
+        <div className="min-h-screen bg-gray-50">
+            {/* Header */}
+            <header className="bg-indigo-700 text-white shadow-md">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="flex justify-between items-center py-4">
+                        <h1 className="text-2xl font-bold">DevBook</h1>
+                    </div>
+                </div>
+            </header>
+
+            <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <button
-                  type="button"
-                  onClick={handleAddNewTag}
-                  className="bg-gray-200 px-4 py-2 border border-gray-300 border-l-0 rounded-r-md hover:bg-gray-300"
+                    onClick={() => navigate("/dashboard")}
+                    className="flex items-center text-indigo-600 hover:text-indigo-800 mb-6 transition duration-150"
                 >
-                  Add
+                    <FiArrowLeft className="mr-2" />
+                    Back to Dashboard
                 </button>
-              </div>
-              {selectedTags.length > 0 && (
-                <div className="mt-2">
-                  <p className="text-sm text-gray-500 mb-1">Selected tags:</p>
-                  <div className="flex flex-wrap gap-2">
-                    {selectedTags.map(tag => (
-                      <span key={tag} className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                        {tag}
-                        <button
-                          type="button"
-                          onClick={() => setSelectedTags(prev => prev.filter(t => t !== tag))}
-                          className="ml-1.5 inline-flex text-blue-400 hover:text-blue-600 focus:outline-none"
-                        >
-                          <span className="sr-only">Remove tag {tag}</span>
-                          &times;
-                        </button>
-                      </span>
-                    ))}
-                  </div>
+
+                <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <h1 className="text-2xl font-bold text-gray-800 border-b pb-4 mb-6">
+                        Add New Bookmark
+                    </h1>
+
+                    {loading && (
+                        <div className="absolute inset-0 bg-white bg-opacity-70 flex items-center justify-center z-10">
+                            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-indigo-500"></div>
+                        </div>
+                    )}
+
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                        <div className="space-y-4">
+                            <div>
+                                <label
+                                    htmlFor="url"
+                                    className="block text-sm font-medium text-gray-700"
+                                >
+                                    URL <span className="text-red-500">*</span>
+                                </label>
+                                <div className="mt-1 flex rounded-md shadow-sm">
+                                    <div className="relative flex items-stretch flex-grow">
+                                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <FiLink className="text-gray-400" />
+                                        </div>
+                                        <input
+                                            type="url"
+                                            id="url"
+                                            value={url}
+                                            onChange={(e) =>
+                                                setUrl(e.target.value)
+                                            }
+                                            required
+                                            placeholder="https://example.com"
+                                            className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-10 pr-12 sm:text-sm border-gray-300 rounded-md py-3"
+                                        />
+                                    </div>
+                                    <button
+                                        type="button"
+                                        onClick={extractTitleFromUrl}
+                                        className="ml-3 inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                    >
+                                        Extract Title
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label
+                                    htmlFor="title"
+                                    className="block text-sm font-medium text-gray-700"
+                                >
+                                    Title{" "}
+                                    <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="title"
+                                    value={title}
+                                    onChange={(e) => setTitle(e.target.value)}
+                                    required
+                                    placeholder="Enter a descriptive title"
+                                    className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                                />
+                            </div>
+
+                            <div>
+                                <label
+                                    htmlFor="description"
+                                    className="block text-sm font-medium text-gray-700"
+                                >
+                                    Description
+                                </label>
+                                <textarea
+                                    id="description"
+                                    value={description}
+                                    onChange={(e) =>
+                                        setDescription(e.target.value)
+                                    }
+                                    rows="4"
+                                    placeholder="What's this bookmark about?"
+                                    className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                                ></textarea>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label
+                                        htmlFor="category"
+                                        className="flex items-center text-sm font-medium text-gray-700"
+                                    >
+                                        <BiCategoryAlt className="mr-2 text-indigo-500" />
+                                        Category
+                                    </label>
+                                    <div className="mt-1">
+                                        <select
+                                            id="category"
+                                            value={categoryId}
+                                            onChange={(e) =>
+                                                setCategoryId(e.target.value)
+                                            }
+                                            className="block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                                        >
+                                            <option value="">
+                                                Select a category
+                                            </option>
+                                            {availableCategories.map(
+                                                (category) => (
+                                                    <option
+                                                        key={category.id}
+                                                        value={category.id}
+                                                    >
+                                                        {category.name}
+                                                    </option>
+                                                )
+                                            )}
+                                        </select>
+                                    </div>
+                                    <div className="mt-2 flex">
+                                        <input
+                                            type="text"
+                                            placeholder="New category"
+                                            value={newCategory}
+                                            onChange={(e) =>
+                                                setNewCategory(e.target.value)
+                                            }
+                                            className="block w-full px-4 py-2 border border-gray-300 rounded-l-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                                        />
+                                        <button
+                                            type="button"
+                                            onClick={handleAddCategory}
+                                            className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-r-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                        >
+                                            <FiPlus className="mr-2" />
+                                            Add
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label
+                                        htmlFor="tags"
+                                        className="flex items-center text-sm font-medium text-gray-700"
+                                    >
+                                        <AiOutlineTags className="mr-2 text-indigo-500" />
+                                        Tags
+                                    </label>
+                                    <div className="mt-1">
+                                        <select
+                                            id="tags"
+                                            multiple
+                                            value={tags}
+                                            onChange={(e) =>
+                                                setTags(
+                                                    Array.from(
+                                                        e.target
+                                                            .selectedOptions,
+                                                        (option) => option.value
+                                                    )
+                                                )
+                                            }
+                                            className="block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                                            size="3"
+                                        >
+                                            {availableTags.map((tag) => (
+                                                <option
+                                                    key={tag.id}
+                                                    value={tag.id}
+                                                >
+                                                    {tag.name}
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                    <div className="mt-2 flex">
+                                        <input
+                                            type="text"
+                                            placeholder="New tag"
+                                            value={newTag}
+                                            onChange={(e) =>
+                                                setNewTag(e.target.value)
+                                            }
+                                            className="block w-full px-4 py-2 border border-gray-300 rounded-l-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                                        />
+                                        <button
+                                            type="button"
+                                            onClick={handleAddTag}
+                                            className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-r-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                        >
+                                            <FiPlus className="mr-2" />
+                                            Add
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Selected Tags Display */}
+                            {selectedTagNames.length > 0 && (
+                                <div className="mt-2">
+                                    <p className="text-sm text-gray-500 mb-2">
+                                        Selected tags:
+                                    </p>
+                                    <div className="flex flex-wrap gap-2">
+                                        {selectedTagNames.map(
+                                            (tagName, index) => (
+                                                <span
+                                                    key={index}
+                                                    className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800"
+                                                >
+                                                    <AiOutlineTags className="mr-1" />
+                                                    {tagName}
+                                                </span>
+                                            )
+                                        )}
+                                    </div>
+                                </div>
+                            )}
+
+                            <div className="flex items-center py-3 px-3 bg-gray-50 rounded-lg">
+                                <input
+                                    type="checkbox"
+                                    id="isPublic"
+                                    checked={isPublic}
+                                    onChange={(e) =>
+                                        setIsPublic(e.target.checked)
+                                    }
+                                    className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                                />
+                                <label
+                                    htmlFor="isPublic"
+                                    className="ml-2 flex items-center text-sm text-gray-900"
+                                >
+                                    {isPublic ? (
+                                        <>
+                                            <FiEye className="mr-1 text-indigo-500" />
+                                            Make this bookmark public
+                                        </>
+                                    ) : (
+                                        <>
+                                            <FiEyeOff className="mr-1 text-gray-500" />
+                                            Make this bookmark public
+                                        </>
+                                    )}
+                                </label>
+                            </div>
+                        </div>
+
+                        <div className="pt-4 border-t border-gray-200 flex justify-end space-x-3">
+                            <button
+                                type="button"
+                                onClick={() => navigate("/dashboard")}
+                                className="px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                type="submit"
+                                disabled={loading}
+                                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            >
+                                <FiSave className="mr-2" />
+                                Save Bookmark
+                            </button>
+                        </div>
+                    </form>
                 </div>
-              )}
-            </div>
-            
-            {/* Category Selection */}
-            <div>
-              <label htmlFor="category" className="block text-sm font-medium text-gray-700 mb-1">
-                Category
-              </label>
-              {!isAddingNewCategory ? (
-                <select
-                  id="category"
-                  value={category}
-                  onChange={handleCategoryChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                >
-                  <option value="">Select a category</option>
-                  {existingCategories.map(cat => (
-                    <option key={cat} value={cat}>{cat}</option>
-                  ))}
-                  <option value="add_new">+ Add new category</option>
-                </select>
-              ) : (
-                <div className="flex">
-                  <input
-                    type="text"
-                    placeholder="Enter new category"
-                    value={newCategory}
-                    onChange={(e) => setNewCategory(e.target.value)}
-                    className="flex-grow px-3 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  />
-                  <button
-                    type="button"
-                    onClick={handleAddNewCategory}
-                    className="bg-gray-200 px-4 py-2 border border-gray-300 border-l-0 rounded-r-md hover:bg-gray-300"
-                  >
-                    Add
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setIsAddingNewCategory(false);
-                      setNewCategory('');
-                    }}
-                    className="ml-2 bg-gray-200 px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-300"
-                  >
-                    Cancel
-                  </button>
-                </div>
-              )}
-            </div>
-            
-            {/* Submit Button */}
-            <div>
-              <button
-                type="submit"
-                disabled={isLoading}
-                className={`w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 ${
-                  isLoading ? 'opacity-75 cursor-not-allowed' : ''
-                }`}
-              >
-                {isLoading ? 'Saving...' : 'Save Bookmark'}
-              </button>
-            </div>
-          </form>
+
+                {/* Preview Section */}
+                {title && url && (
+                    <div className="bg-white rounded-lg shadow-md p-6">
+                        <h2 className="text-lg font-semibold text-gray-800 mb-4">
+                            Preview
+                        </h2>
+                        <div className="border border-gray-200 rounded-lg p-4">
+                            <h3 className="text-lg font-medium text-gray-800">
+                                {title}
+                            </h3>
+                            <a
+                                href={url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-sm text-indigo-600 hover:text-indigo-800 mt-1 block"
+                            >
+                                {url}
+                            </a>
+
+                            {description && (
+                                <p className="text-sm text-gray-600 mt-2">
+                                    {description}
+                                </p>
+                            )}
+
+                            <div className="flex flex-wrap gap-2 mt-3">
+                                {categoryId &&
+                                    availableCategories.find(
+                                        (c) =>
+                                            c.id.toString() ===
+                                            categoryId.toString()
+                                    ) && (
+                                        <div className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                            <BiCategoryAlt className="mr-1" />
+                                            {
+                                                availableCategories.find(
+                                                    (c) =>
+                                                        c.id.toString() ===
+                                                        categoryId.toString()
+                                                ).name
+                                            }
+                                        </div>
+                                    )}
+
+                                {selectedTagNames.map((tagName, index) => (
+                                    <span
+                                        key={index}
+                                        className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800"
+                                    >
+                                        <AiOutlineTags className="mr-1" />
+                                        {tagName}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </main>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default CreateBookmark;
