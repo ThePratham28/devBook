@@ -27,7 +27,6 @@ export default (sequelize) => {
             title: {
                 type: DataTypes.STRING,
                 allowNull: false,
-                unique: true,
             },
             url: {
                 type: DataTypes.STRING,

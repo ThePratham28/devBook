@@ -13,12 +13,13 @@ import {
     resendVerificationEmail,
 } from "../controllers/auth.controller.js";
 import passport from "passport";
+import { authenticate } from "../middlewares/auth.middleware.js";
 
 router.post("/signup", signup);
 
 router.post("/login", login);
 
-router.post("/logout", logout);
+router.post("/logout", authenticate, logout);
 
 router.post("/forgot-password", forgotPassword);
 
@@ -56,7 +57,22 @@ router.get(
             maxAge: 24 * 60 * 60 * 1000, // 1 day
         });
 
-        res.redirect("/");
+        res.redirect(`${process.env.CLIENT_URL}/auth/callback`);
     }
 );
+
+
+router.get("/me", authenticate,(req, res) => {
+    if (!req.user) {
+        return res.status(401).json({ message: "Unauthorized" });
+    }
+    res.status(200).json({
+        success: true,
+        user: {
+            id: req.user.id,
+            name: req.user.name,
+            email: req.user.email,
+        },
+    });
+});
 export default router;

@@ -5,7 +5,6 @@ import { Op } from "sequelize";
 import { verificationEmail, welcomeEmail } from "../services/email.service.js";
 
 import models from "../models/model.js";
-import { verify } from "argon2";
 const { User } = models;
 
 export const signup = async (req, res) => {
@@ -40,23 +39,6 @@ export const signup = async (req, res) => {
 
         // send verification email
         await verificationEmail(user.email, verificationToken);
-
-        // // generate Token and set Cookie
-        // const jwtToken = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
-        //     expiresIn: "7d",
-        // });
-
-        // res.cookie("token", jwtToken, {
-        //     httpOnly: true,
-        //     secure: process.env.NODE_ENV === "production",
-        //     sameSite: "strict",
-        //     maxAge: 7 * 24 * 60 * 60 * 1000,
-        // });
-
-        // const userData = user.toJSON();
-        // delete userData.password;
-        // delete userData.verificationToken;
-        // delete userData.verificationTokenExpiresAt;
 
         res.status(201).json({
             success: true,
@@ -129,7 +111,7 @@ export const login = async (req, res) => {
             });
         }
 
-        const isPasswordValid = await verify(user.password, password);
+        const isPasswordValid = await user.isValidPassword(password);
 
         if (!isPasswordValid) {
             return res
@@ -240,7 +222,7 @@ export const forgotPassword = async (req, res) => {
         await user.save();
 
         // create the reset URL
-        const resetUrl = `${process.env.BASE_URL}/api/auth/reset-password/${resetToken}`;
+        const resetUrl = `${process.env.CLIENT_URL}/reset-password/${resetToken}`;
 
         // send email
         const transporter = nodemailer.createTransport({
@@ -294,94 +276,18 @@ export const resetForm = async (req, res) => {
         });
 
         if (!user) {
-            return res.status(400).send(`
-                <!DOCTYPE html>
-                <html lang="en">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Invalid Token</title>
-                </head>
-                <body>
-                    <h1>Invalid or Expired Token</h1>
-                    <p>The password reset token is invalid or has expired. Please request a new password reset.</p>
-                </body>
-                </html>
-            `);
+            return res.status(400).json({
+                success: false,
+                message: "Invalid or expired reset token",
+            });
         }
 
-        res.send(`
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Reset Password</title>
-            <style>
-                body {
-                    font-family: Arial, sans-serif;
-                    background-color: #f4f4f4;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: 100vh;
-                    margin: 0;
-                    flex-direction: column;
-                }
-                .container {
-                    background-color: #ffffff;
-                    padding: 20px;
-                    border-radius: 8px;
-                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                    width: 100%;
-                    max-width: 400px;
-                    text-align: center;
-                }
-                h1 {
-                    color: #333;
-                    margin-bottom: 20px;
-                }
-                label {
-                    font-size: 16px;
-                    color: #555;
-                    display: block;
-                    margin-bottom: 8px;
-                    text-align: left;
-                }
-                input[type="password"] {
-                    width: 100%;
-                    padding: 10px;
-                    margin-bottom: 20px;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    font-size: 16px;
-                }
-                button {
-                    background-color: #007bff;
-                    color: white;
-                    padding: 10px 20px;
-                    border: none;
-                    border-radius: 4px;
-                    font-size: 16px;
-                    cursor: pointer;
-                }
-                button:hover {
-                    background-color: #0056b3;
-                }
-            </style>
-        </head>
-        <body>
-            <h1>Reset your Password</h1>
-            <form action="${process.env.BASE_URL}/api/auth/reset/${token}" method="POST">
-                <label for="newPassword">New Password:</label>
-                <input type="password" id="newPassword" name="newPassword" required>
-                <button type="submit">Reset Password</button>
-            </form>
-        </body>
-        </html>
-    `);
+        res.status(200).json({
+            success: true,
+            message: "Valid reset token",
+        });
     } catch (error) {
-        console.error("Error rendering reset password form:", error);
+        console.error("Error validating reset token:", error);
         res.status(500).json({ success: false, message: "Server error" });
     }
 };
