@@ -14,17 +14,21 @@ export default (sequelize) => {
         }
     }
 
-    Category.init(
-        {
-            name: {
-                type: DataTypes.STRING,
-                allowNull: false,
-            },
+Category.init(
+    {
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
-        {
-            sequelize,
-            modelName: "Category",
-        }
-    );
+    },
+    {
+        sequelize,
+        modelName: "Category",
+        indexes: [
+            { fields: ["userId"] }, // Index for filtering by user
+            { fields: ["name", "userId"], unique: true }, // Unique index for category names per user
+        ],
+    }
+);
     return Category;
 };

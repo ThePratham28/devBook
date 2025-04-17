@@ -19,6 +19,9 @@ export default (sequelize) => {
         {
             sequelize,
             modelName: "BookmarkTag",
+            indexes: [
+                { fields: ["bookmarkId", "tagId"], unique: true }, // Composite index for many-to-many relationships
+            ],
         }
     );
     return BookmarkTag;

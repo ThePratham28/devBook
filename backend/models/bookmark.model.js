@@ -47,6 +47,16 @@ export default (sequelize) => {
         {
             sequelize,
             modelName: "Bookmark",
+            indexes: [
+                { fields: ["userId"] }, // Index for filtering by user
+                { fields: ["categoryId"] }, // Index for filtering by category
+                { fields: ["createdAt"] }, // Index for sorting
+                {
+                    fields: ["title", "description"],
+                    using: "GIN",
+                    operator: "gin_trgm_ops",
+                }, // Full-text search index
+            ],
         }
     );
 

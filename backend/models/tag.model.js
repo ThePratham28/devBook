@@ -10,18 +10,21 @@ export default (sequelize) => {
         }
     }
 
-    Tag.init(
-        {
-            name: {
-                type: DataTypes.STRING,
-                allowNull: false,
-                unique: true,
-            },
+Tag.init(
+    {
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
         },
-        {
-            sequelize,
-            modelName: "Tag",
-        }
-    );
+    },
+    {
+        sequelize,
+        modelName: "Tag",
+        indexes: [
+            { fields: ["name"], unique: true }, // Index for tag lookups
+        ],
+    }
+);
     return Tag;
 };

@@ -83,6 +83,10 @@ export default (sequelize) => {
                     }
                 },
             },
+            indexes: [
+                { fields: ["email"], unique: true }, // Index for email lookups
+                { fields: ["googleId"] }, // Index for Google OAuth lookups
+            ],
         }
     );
 

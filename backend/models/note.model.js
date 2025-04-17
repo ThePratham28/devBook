@@ -20,6 +20,9 @@ export default (sequelize) => {
         {
             sequelize,
             modelName: "Note",
+            indexes: [
+                { fields: ["bookmarkId"] }, // Index for filtering by bookmark
+            ],
         }
     );
 

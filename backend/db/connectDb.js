@@ -1,6 +1,7 @@
 import { Sequelize } from "sequelize";
 import dotenv from "dotenv";
 import createDatabaseIfNotExists from "../utils/createDBifnotexists.js";
+import logger from "../utils/logger.js";
 dotenv.config();
 
 let sequelize;
@@ -36,9 +37,11 @@ export const connectDB = async () => {
     try {
         await sequelize.authenticate();
         console.log("Database connected successfully");
+        logger.info("Database connected successfully");
 
         await sequelize.sync({ alter: false });
         console.log("Database synchronized successfully");
+        logger.info("Database synchronized successfully");
     } catch (error) {
         console.error("Unable to connect to the database:", error);
         process.exit(1);

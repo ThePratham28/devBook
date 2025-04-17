@@ -1,13 +1,12 @@
 import { Op } from "sequelize";
 import models from "../models/model.js";
+import { getCache, setCache, invalidateCache } from "../utils/redisCache.js";
 
 const { Bookmark, Tag, Category, BookmarkTag } = models;
 
 export const createBookmark = async (req, res) => {
     try {
-        const { title, url, description, isPublic, categoryId, tags } =
-            req.body;
-
+        const { title, url, description, isPublic, categoryId, tags } = req.body;
         const userId = req.user.id;
 
         // Validate category
@@ -15,9 +14,9 @@ export const createBookmark = async (req, res) => {
             where: { id: categoryId, userId },
         });
         if (!category) {
-            return res
-                .status(404)
-                .json({ message: "Category not found or unauthorized" });
+            const error = new Error("Category not found or unauthorized");
+            error.statusCode = 404;
+            throw error;
         }
 
         // Create bookmark
@@ -34,13 +33,16 @@ export const createBookmark = async (req, res) => {
             await bookmark.addTags(tags);
         }
 
+        // Invalidate cache for bookmarks list
+        await invalidateCache(`bookmarks:${userId}`);
+
         // Fetch bookmark with associated tags
         const createdBookmark = await Bookmark.findOne({
             where: { id: bookmark.id },
             include: [
                 {
                     model: Tag,
-                    through: { attributes: [] }, 
+                    through: { attributes: [] },
                 },
                 {
                     model: Category,
@@ -51,10 +53,9 @@ export const createBookmark = async (req, res) => {
         res.status(201).json({ success: true, data: createdBookmark });
     } catch (error) {
         console.error("Error creating bookmark:", error);
-        res.status(500).json({
+        res.status(error.statusCode || 500).json({
             success: false,
-            message: "Failed to create bookmark",
-            error: error.message,
+            message: error.message || "Failed to create bookmark",
         });
     }
 };
@@ -64,10 +65,9 @@ export const getBookmarks = async (req, res) => {
         const userId = req.user.id;
 
         if (!userId) {
-            return res.status(400).json({
-                success: false,
-                message: "Invalid user ID",
-            });
+            const error = new Error("Invalid user ID");
+            error.statusCode = 400;
+            throw error;
         }
 
         // Pagination parameters
@@ -82,30 +82,31 @@ export const getBookmarks = async (req, res) => {
         const sortBy = req.query.sortBy || "createdAt";
         const sortOrder = req.query.sortOrder === "desc" ? "DESC" : "ASC";
 
+        const cacheKey = `bookmarks:${userId}:page:${page}:limit:${limit}:tag:${tag || ""}:category:${category || ""}:search:${search || ""}:sortBy:${sortBy}:sortOrder:${sortOrder}`;
+        const cachedData = await getCache(cacheKey);
+
+        if (cachedData) {
+            return res.status(200).json(JSON.parse(cachedData));
+        }
+
         const where = { userId };
-        // Modified version for bookmark.controller.js
         const include = [
             {
                 model: Category,
             },
             {
                 model: Tag,
-                through: { attributes: [] }, 
+                through: { attributes: [] },
             },
         ];
 
-        // Then modify your filter conditions to use 'where' within the existing includes
         if (tag) {
-            // Find the Tag include and add the where clause
             const tagInclude = include.find((inc) => inc.model === Tag);
             tagInclude.where = { name: tag };
         }
 
         if (category) {
-            // Find the Category include and add the where clause
-            const categoryInclude = include.find(
-                (inc) => inc.model === Category
-            );
+            const categoryInclude = include.find((inc) => inc.model === Category);
             categoryInclude.where = { name: category };
         }
 
@@ -116,18 +117,17 @@ export const getBookmarks = async (req, res) => {
             ];
         }
 
-        const { rows: bookmarks, count: total } =
-            await Bookmark.findAndCountAll({
-                where,
-                include,
-                limit,
-                offset,
-                order: [[sortBy, sortOrder]],
-            });
+        const { rows: bookmarks, count: total } = await Bookmark.findAndCountAll({
+            where,
+            include,
+            limit,
+            offset,
+            order: [[sortBy, sortOrder]],
+        });
 
         const totalPages = Math.ceil(total / limit);
 
-        res.status(200).json({
+        const response = {
             success: true,
             data: bookmarks,
             meta: {
@@ -136,13 +136,16 @@ export const getBookmarks = async (req, res) => {
                 currpage: page,
                 perPage: limit,
             },
-        });
+        };
+
+        await setCache(cacheKey, response);
+
+        res.status(200).json(response);
     } catch (error) {
         console.error("Error fetching bookmarks:", error);
-        res.status(500).json({
+        res.status(error.statusCode || 500).json({
             success: false,
-            message: "Failed to fetch bookmarks",
-            error: error.message,
+            message: error.message || "Failed to fetch bookmarks",
         });
     }
 };
@@ -153,10 +156,16 @@ export const getBookmarkById = async (req, res) => {
         const userId = req.user.id;
 
         if (!id || !userId) {
-            return res.status(400).json({
-                success: false,
-                message: "Invalid bookmark ID or user ID",
-            });
+            const error = new Error("Invalid bookmark ID or user ID");
+            error.statusCode = 400;
+            throw error;
+        }
+
+        const cacheKey = `bookmark:${userId}:${id}`;
+        const cachedData = await getCache(cacheKey);
+
+        if (cachedData) {
+            return res.status(200).json(JSON.parse(cachedData));
         }
 
         const bookmark = await Bookmark.findOne({
@@ -164,19 +173,19 @@ export const getBookmarkById = async (req, res) => {
         });
 
         if (!bookmark) {
-            return res.status(404).json({
-                success: false,
-                message: "Bookmark not found",
-            });
+            const error = new Error("Bookmark not found");
+            error.statusCode = 404;
+            throw error;
         }
+
+        await setCache(cacheKey, { success: true, data: bookmark });
 
         res.status(200).json({ success: true, data: bookmark });
     } catch (error) {
         console.error("Error fetching bookmark:", error);
-        res.status(500).json({
+        res.status(error.statusCode || 500).json({
             success: false,
-            message: "Failed to fetch bookmark",
-            error: error.message,
+            message: error.message || "Failed to fetch bookmark",
         });
     }
 };
@@ -185,18 +194,16 @@ export const updateBookmark = async (req, res) => {
     try {
         const { id } = req.params;
         const userId = req.user.id;
-        const { title, url, description, isPublic, categoryId, tags } =
-            req.body;
+        const { title, url, description, isPublic, categoryId, tags } = req.body;
 
         const bookmark = await Bookmark.findOne({
             where: { id, userId },
         });
 
         if (!bookmark) {
-            return res.status(404).json({
-                success: false,
-                message: "Bookmark not found",
-            });
+            const error = new Error("Bookmark not found");
+            error.statusCode = 404;
+            throw error;
         }
 
         // Update bookmark
@@ -209,20 +216,22 @@ export const updateBookmark = async (req, res) => {
         });
 
         if (tags) {
-            // Remove all existing associations and add new ones
             await bookmark.setTags([]);
             if (tags.length > 0) {
                 await bookmark.addTags(tags);
             }
         }
 
-        // Fetch updated bookmark with associations
+        // Invalidate cache for this bookmark and bookmarks list
+        await invalidateCache(`bookmark:${userId}:${id}`);
+        await invalidateCache(`bookmarks:${userId}`);
+
         const updatedBookmark = await Bookmark.findOne({
             where: { id },
             include: [
                 {
                     model: Tag,
-                    through: { attributes: [] }, 
+                    through: { attributes: [] },
                 },
                 {
                     model: Category,
@@ -236,10 +245,9 @@ export const updateBookmark = async (req, res) => {
         });
     } catch (error) {
         console.error("Error updating bookmark:", error);
-        res.status(500).json({
+        res.status(error.statusCode || 500).json({
             success: false,
-            message: "Failed to update bookmark",
-            error: error.message,
+            message: error.message || "Failed to update bookmark",
         });
     }
 };
@@ -254,13 +262,16 @@ export const deleteBookmark = async (req, res) => {
         });
 
         if (!bookmark) {
-            return res.status(404).json({
-                success: false,
-                message: "Bookmark not found",
-            });
+            const error = new Error("Bookmark not found");
+            error.statusCode = 404;
+            throw error;
         }
 
         await bookmark.destroy();
+
+        // Invalidate cache for this bookmark and bookmarks list
+        await invalidateCache(`bookmark:${userId}:${id}`);
+        await invalidateCache(`bookmarks:${userId}`);
 
         res.status(200).json({
             success: true,
@@ -269,10 +280,9 @@ export const deleteBookmark = async (req, res) => {
         });
     } catch (error) {
         console.error(`Error deleting bookmark with ID ${id}:`, error);
-        res.status(500).json({
+        res.status(error.statusCode || 500).json({
             success: false,
-            message: "Failed to delete bookmark",
-            error: error.message,
+            message: error.message || "Failed to delete bookmark",
         });
     }
 };
