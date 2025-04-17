@@ -1,6 +1,6 @@
-# DevBook Backend
+# Developer Bookmark Manager - Backend
 
-DevBook Backend is a Node.js-based RESTful API for managing developer bookmarks. It allows users to save, tag, and organize bookmarks with categories and notes. The backend is built using **Express.js**, **Sequelize ORM**, and **PostgreSQL**, with additional features like authentication, Redis caching, and email services.
+The **Developer Bookmark Manager** backend is a scalable RESTful API built with **Node.js**, **Express.js**, and **PostgreSQL**. It enables developers to manage bookmarks efficiently with features like tagging, categorization, and note-taking. The backend also includes user authentication, caching with Redis, and email services for account verification and password recovery.
 
 ---
 
@@ -39,9 +39,9 @@ DevBook Backend is a Node.js-based RESTful API for managing developer bookmarks.
 
 ### **Additional Features**
 
--   Export bookmarks as CSV or JSON (to be implemented).
--   Bookmark sharing functionality (e.g., generate public links) (to be implemented).
--   Analytics to track frequently used tags or categories (to be implemented).
+-   Redis caching for frequently accessed endpoints.
+-   Logging with Winston for debugging and monitoring.
+-   Swagger API documentation.
 
 ---
 
@@ -61,8 +61,9 @@ DevBook Backend is a Node.js-based RESTful API for managing developer bookmarks.
 
 -   **dotenv**: Environment variable management.
 -   **winston**: Logging.
--   **express-validator**: Request validation.
 -   **argon2**: Password hashing.
+-   **express-rate-limit**: Rate limiting for security.
+-   **helmet**: Security headers.
 
 ---
 
@@ -71,14 +72,13 @@ DevBook Backend is a Node.js-based RESTful API for managing developer bookmarks.
 ```
 backend/
 ├── config/                 # Configuration files
-│   ├── passport.config.js  # Passport.js configuration
-│   └── db.config.js        # Database configuration
+│   └── passport.config.js  # Passport.js configuration
 ├── controllers/            # Controllers for handling business logic
-│   ├── authController.js   # Authentication-related logic
-│   ├── bookmarkController.js # Bookmark-related logic
-│   ├── tagController.js    # Tag-related logic
-│   ├── categoryController.js # Category-related logic
-│   └── noteController.js   # Note-related logic
+│   ├── auth.controller.js  # Authentication-related logic
+│   ├── bookmark.controller.js # Bookmark-related logic
+│   ├── tag.controller.js   # Tag-related logic
+│   ├── category.controller.js # Category-related logic
+│   └── note.controller.js  # Note-related logic
 ├── db/                     # Database connection and initialization
 │   ├── connectDb.js        # Sequelize connection setup
 │   └── migrations/         # Sequelize migrations
@@ -91,20 +91,21 @@ backend/
 │   └── bookmarkTag.model.js # Bookmark-Tag join table
 ├── routes/                 # API route definitions
 │   ├── authRoutes.js       # Authentication routes
-│   ├── bookmarkRoutes.js   # Bookmark routes
-│   ├── tagRoutes.js        # Tag routes
-│   ├── categoryRoutes.js   # Category routes
-│   └── noteRoutes.js       # Note routes
+│   ├── bookmark.routes.js  # Bookmark routes
+│   ├── tag.routes.js       # Tag routes
+│   ├── category.routes.js  # Category routes
+│   └── note.routes.js      # Note routes
 ├── services/               # Service layer for reusable logic
 │   └── email.service.js    # Email-related logic
 ├── utils/                  # Utility functions
 │   ├── redisClient.js      # Redis client setup
-│   └── logger.js           # Winston logger setup
+│   ├── logger.js           # Winston logger setup
+│   └── createDBifnotexists.js # Database creation utility
 ├── middlewares/            # Custom middleware
-│   ├── authMiddleware.js   # Middleware for authentication
-│   └── validationMiddleware.js # Middleware for request validation
+│   ├── auth.middleware.js  # Middleware for authentication
+│   ├── error.middleware.js # Middleware for error handling
+│   └── logging.middleware.js # Middleware for request logging
 ├── public/                 # Static files (e.g., HTML, CSS)
-├── tests/                  # Unit and integration tests
 ├── .env                    # Environment variables
 ├── .gitignore              # Git ignore file
 ├── index.js                # Entry point of the application
@@ -177,7 +178,7 @@ backend/
 
     ```bash
     git clone https://github.com/your-repo/devbook-backend.git
-    cd devbook-backend
+    cd backend
     ```
 
 2. Install dependencies:
@@ -186,83 +187,34 @@ backend/
     npm install
     ```
 
-3. Create a
+3. Create a `.env` file in the root directory and configure the following variables:
 
-.env
-
-file and configure the following variables:
-
-```env
-NODE_ENV=development
-PORT=8080
-DB_NAME=bookmark_manager_dev
-DB_USER=your_db_user
-DB_PASSWORD=your_db_password
-DB_HOST=127.0.0.1
-DB_PORT=5432
-JWT_SECRET=your_jwt_secret
-REDIS_HOST=127.0.0.1
-REDIS_PORT=6379
-EMAIL_USER=your_email_user
-EMAIL_PASS=your_email_password
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-```
-
-4. Run database migrations:
-
-    ```bash
-    npx sequelize-cli db:migrate
+    ```env
+    PORT=8080
+    JWT_SECRET=your_jwt_secret
+    NODE_ENV=development
+    DB_NAME=your_db_name
+    DB_USER=your_db_user
+    DB_PASSWORD=your_db_password
+    DB_HOST=127.0.0.1
+    DB_PORT=5432
+    REDIS_HOST=127.0.0.1
+    REDIS_PORT=6379
+    EMAIL_USER=your_email_user
+    EMAIL_PASS=your_email_password
+    GOOGLE_CLIENT_ID=your_google_client_id
+    GOOGLE_CLIENT_SECRET=your_google_client_secret
+    BASE_URL=http://localhost:8080
+    CLIENT_URL=http://localhost:5173
     ```
 
-5. Start the server:
+4. Start the server:
 
     ```bash
     npm start
     ```
 
-6. Access the API at `http://localhost:8080`.
-
----
-
-## Testing
-
-### **Run Tests**
-
--   To run unit and integration tests:
-    ```bash
-    npm test
-    ```
-
----
-
-## Deployment
-
-### **Docker**
-
-1. Build the Docker image:
-
-    ```bash
-    docker build -t devbook-backend .
-    ```
-
-2. Run the container:
-    ```bash
-    docker run -p 8080:8080 --env-file .env devbook-backend
-    ```
-
-### **CI/CD**
-
--   Set up a CI/CD pipeline using GitHub Actions, GitLab CI, or Jenkins to automate deployment.
-
----
-
-## Future Enhancements
-
--   Export bookmarks as CSV or JSON.
--   Bookmark sharing functionality (e.g., generate public links).
--   Analytics to track frequently used tags or categories.
--   Role-based access control (RBAC) for admin and user roles.
+5. Access the API at `http://localhost:8080`.
 
 ---
 
@@ -275,7 +227,3 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 ## Contributors
 
 -   **Pratham Chopde** - [GitHub Profile](https://github.com/your-profile)
-
-```
-
-```
