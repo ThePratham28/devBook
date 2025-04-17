@@ -70,6 +70,15 @@ export const getBookmarks = async (req, res) => {
             throw error;
         }
 
+        // // Cache key
+        // const cacheKey = `bookmarks:${userId}`;
+        // const cachedData = await getCache(cacheKey);
+
+        // if (cachedData) {
+        //     console.log("Cached data:", cachedData); // Log cached data
+        //     return res.status(200).json(cachedData);
+        // }
+
         // Pagination parameters
         const page = parseInt(req.query.page) || 1;
         const limit = parseInt(req.query.limit) || 10;
@@ -81,13 +90,6 @@ export const getBookmarks = async (req, res) => {
         // Sorting parameters
         const sortBy = req.query.sortBy || "createdAt";
         const sortOrder = req.query.sortOrder === "desc" ? "DESC" : "ASC";
-
-        const cacheKey = `bookmarks:${userId}:page:${page}:limit:${limit}:tag:${tag || ""}:category:${category || ""}:search:${search || ""}:sortBy:${sortBy}:sortOrder:${sortOrder}`;
-        const cachedData = await getCache(cacheKey);
-
-        if (cachedData) {
-            return res.status(200).json(JSON.parse(cachedData));
-        }
 
         const where = { userId };
         const include = [
@@ -106,7 +108,9 @@ export const getBookmarks = async (req, res) => {
         }
 
         if (category) {
-            const categoryInclude = include.find((inc) => inc.model === Category);
+            const categoryInclude = include.find(
+                (inc) => inc.model === Category
+            );
             categoryInclude.where = { name: category };
         }
 
@@ -117,13 +121,14 @@ export const getBookmarks = async (req, res) => {
             ];
         }
 
-        const { rows: bookmarks, count: total } = await Bookmark.findAndCountAll({
-            where,
-            include,
-            limit,
-            offset,
-            order: [[sortBy, sortOrder]],
-        });
+        const { rows: bookmarks, count: total } =
+            await Bookmark.findAndCountAll({
+                where,
+                include,
+                limit,
+                offset,
+                order: [[sortBy, sortOrder]],
+            });
 
         const totalPages = Math.ceil(total / limit);
 
@@ -138,7 +143,7 @@ export const getBookmarks = async (req, res) => {
             },
         };
 
-        await setCache(cacheKey, response);
+        // await setCache(cacheKey, response);
 
         res.status(200).json(response);
     } catch (error) {
@@ -165,7 +170,7 @@ export const getBookmarkById = async (req, res) => {
         const cachedData = await getCache(cacheKey);
 
         if (cachedData) {
-            return res.status(200).json(JSON.parse(cachedData));
+            return res.status(200).json(cachedData);
         }
 
         const bookmark = await Bookmark.findOne({

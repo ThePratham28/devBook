@@ -1,108 +1,891 @@
-2025-04-14T05:45:37.637Z [INFO]: Server is running on port 8080
-2025-04-14T05:46:03.656Z [INFO]: Server is running on port 8080
-2025-04-14T05:46:16.257Z [INFO]: Server is running on port 8080
-2025-04-14T05:46:21.990Z [INFO]: Server is running on port 8080
-2025-04-14T05:46:26.702Z [INFO]: Server is running on port 8080
-2025-04-14T05:53:34.035Z [INFO]: Server is running on port 8080
-2025-04-14T06:02:03.185Z [INFO]: Server is running on port 8080
-2025-04-14T06:02:07.950Z [INFO]: Server is running on port 8080
-2025-04-14T06:02:33.198Z [INFO]: Server is running on port 8080
-2025-04-14T06:02:47.839Z [INFO]: Server is running on port 8080
-2025-04-14T06:03:03.422Z [INFO]: Server is running on port 8080
-2025-04-14T06:03:12.330Z [INFO]: Server is running on port 8080
-2025-04-14T06:08:02.569Z [INFO]: Server is running on port 8080
-2025-04-14T06:08:10.669Z [INFO]: Server is running on port 8080
-2025-04-14T06:08:17.972Z [INFO]: Server is running on port 8080
-2025-04-14T06:08:30.150Z [INFO]: Server is running on port 8080
-2025-04-14T06:08:36.964Z [INFO]: Server is running on port 8080
-2025-04-14T06:10:21.928Z [INFO]: Server is running on port 8080
-2025-04-14T06:10:30.116Z [INFO]: Server is running on port 8080
-2025-04-14T06:12:57.609Z [INFO]: Server is running on port 8080
-2025-04-14T06:17:34.402Z [INFO]: Server is running on port 8080
-2025-04-14T06:17:37.658Z [INFO]: Server is running on port 8080
-2025-04-14T06:22:28.695Z [INFO]: Server is running on port 8080
-2025-04-14T06:23:36.938Z [INFO]: Server is running on port 8080
-2025-04-14T06:23:47.611Z [INFO]: Server is running on port 8080
-2025-04-14T06:24:31.530Z [INFO]: Server is running on port 8080
-2025-04-14T06:24:43.647Z [INFO]: Server is running on port 8080
-2025-04-14T06:26:29.692Z [INFO]: Server is running on port 8080
-2025-04-14T09:12:00.303Z [INFO]: Server is running on port 8080
-2025-04-14T10:12:02.649Z [INFO]: Server is running on port 8080
-2025-04-14T10:14:52.485Z [INFO]: Server is running on port 8080
-2025-04-14T10:32:49.350Z [INFO]: Server is running on port 8080
-2025-04-14T13:23:43.488Z [INFO]: Server is running on port 8080
-2025-04-15T04:53:54.638Z [INFO]: Server is running on port 8080
-2025-04-15T05:12:48.358Z [INFO]: Server is running on port 8080
-2025-04-15T05:15:17.783Z [INFO]: Server is running on port 8080
-2025-04-15T05:18:20.024Z [INFO]: Server is running on port 8080
-2025-04-15T05:25:42.577Z [INFO]: Server is running on port 8080
-2025-04-15T05:27:13.185Z [INFO]: Server is running on port 8080
-2025-04-15T05:27:17.937Z [INFO]: Server is running on port 8080
-2025-04-15T05:27:29.323Z [INFO]: Server is running on port 8080
-2025-04-15T05:27:48.040Z [INFO]: Server is running on port 8080
-2025-04-15T05:27:57.392Z [INFO]: Server is running on port 8080
-2025-04-15T05:28:39.292Z [INFO]: Server is running on port 8080
-2025-04-15T05:28:44.064Z [INFO]: Server is running on port 8080
-2025-04-15T05:28:51.949Z [INFO]: Server is running on port 8080
-2025-04-15T05:29:03.311Z [INFO]: Server is running on port 8080
-2025-04-15T05:29:08.260Z [INFO]: Server is running on port 8080
-2025-04-15T11:44:02.176Z [INFO]: Server is running on port 8080
-2025-04-15T13:02:36.249Z [INFO]: Server is running on port 8080
-2025-04-16T05:41:40.313Z [INFO]: Server is running on port 8080
-2025-04-16T06:10:26.755Z [INFO]: Server is running on port 8080
-2025-04-16T06:13:38.080Z [INFO]: Server is running on port 8080
-2025-04-16T06:13:42.905Z [INFO]: Server is running on port 8080
-2025-04-16T07:10:14.498Z [INFO]: Server is running on port 8080
-2025-04-16T08:03:39.685Z [INFO]: Server is running on port 8080
-2025-04-16T09:07:27.841Z [INFO]: Server is running on port 8080
-2025-04-16T09:09:39.301Z [INFO]: Server is running on port 8080
-2025-04-16T09:12:37.046Z [INFO]: Server is running on port 8080
-2025-04-16T09:12:54.881Z [INFO]: Server is running on port 8080
-2025-04-16T09:13:09.017Z [INFO]: Server is running on port 8080
-2025-04-16T09:13:54.447Z [INFO]: Server is running on port 8080
-2025-04-16T09:23:47.574Z [INFO]: Server is running on port 8080
-2025-04-16T09:23:58.487Z [INFO]: Server is running on port 8080
-2025-04-16T09:24:40.384Z [INFO]: Server is running on port 8080
-2025-04-16T09:24:45.363Z [INFO]: Server is running on port 8080
-2025-04-16T09:25:33.000Z [INFO]: Server is running on port 8080
-2025-04-16T09:39:36.720Z [INFO]: Server is running on port 8080
-2025-04-16T09:50:40.984Z [INFO]: Server is running on port 8080
-2025-04-16T09:51:06.171Z [INFO]: Server is running on port 8080
-2025-04-16T09:51:26.301Z [INFO]: Server is running on port 8080
-2025-04-16T09:51:37.385Z [INFO]: Server is running on port 8080
-2025-04-16T09:59:47.204Z [INFO]: Server is running on port 8080
-2025-04-16T10:00:06.967Z [INFO]: Server is running on port 8080
-2025-04-16T10:00:50.589Z [INFO]: Server is running on port 8080
-2025-04-16T10:13:22.102Z [INFO]: Server is running on port 8080
-2025-04-16T10:13:42.374Z [INFO]: Server is running on port 8080
-2025-04-16T10:13:51.755Z [INFO]: Server is running on port 8080
-2025-04-16T10:14:40.400Z [INFO]: Server is running on port 8080
-2025-04-16T10:14:50.077Z [INFO]: Server is running on port 8080
-2025-04-16T10:15:01.795Z [INFO]: Server is running on port 8080
-2025-04-16T10:15:57.108Z [INFO]: Server is running on port 8080
-2025-04-16T10:16:37.857Z [INFO]: Server is running on port 8080
-2025-04-16T11:09:12.038Z [INFO]: Server is running on port 8080
-2025-04-16T11:55:06.658Z [INFO]: Server is running on port 8080
-2025-04-16T12:04:02.520Z [INFO]: Server is running on port 8080
-2025-04-16T12:04:22.440Z [INFO]: Server is running on port 8080
-2025-04-16T12:15:24.166Z [INFO]: Server is running on port 8080
-2025-04-16T12:16:18.176Z [INFO]: Server is running on port 8080
-2025-04-16T12:31:01.125Z [INFO]: Server is running on port 8080
-2025-04-16T12:31:06.311Z [INFO]: Server is running on port 8080
-2025-04-16T12:31:55.808Z [INFO]: Server is running on port 8080
-2025-04-16T12:32:08.714Z [INFO]: Server is running on port 8080
-2025-04-16T13:06:38.760Z [INFO]: Server is running on port 8080
-2025-04-17T05:48:17.049Z [INFO]: Database connected successfully
-2025-04-17T05:48:42.446Z [INFO]: Database connected successfully
-2025-04-17T05:49:24.339Z [INFO]: Database connected successfully
-2025-04-17T05:51:17.728Z [INFO]: Database connected successfully
-2025-04-17T05:51:24.160Z [INFO]: Database connected successfully
-2025-04-17T05:54:14.968Z [INFO]: Database connected successfully
-2025-04-17T05:54:15.071Z [INFO]: Database synchronized successfully
-2025-04-17T05:54:15.073Z [INFO]: Server is running on port 8080
-2025-04-17T05:55:28.994Z [INFO]: Database connected successfully
-2025-04-17T05:55:29.093Z [INFO]: Database synchronized successfully
-2025-04-17T05:55:29.095Z [INFO]: Server is running on port 8080
-2025-04-17T05:57:17.059Z [INFO]: Database connected successfully
-2025-04-17T05:57:17.164Z [INFO]: Database synchronized successfully
-2025-04-17T05:57:17.166Z [INFO]: Server is running on port 8080
+2025-04-17T06:25:06.629Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T06:25:06.654Z [INFO]: Response: 401 GET /
+2025-04-17T06:25:06.658Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:25:06.663Z [INFO]: Response: 401 GET /me
+2025-04-17T06:25:06.673Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T06:25:06.679Z [INFO]: Response: 401 GET /
+2025-04-17T06:25:06.686Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:25:06.690Z [INFO]: Response: 401 GET /me
+2025-04-17T06:25:15.409Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T06:25:15.415Z [INFO]: Response: 401 GET /
+2025-04-17T06:25:15.417Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:25:15.420Z [INFO]: Response: 401 GET /me
+2025-04-17T06:25:15.441Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T06:25:15.446Z [INFO]: Response: 401 GET /
+2025-04-17T06:25:15.452Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:25:15.456Z [INFO]: Response: 401 GET /me
+2025-04-17T06:26:15.132Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T06:26:15.136Z [INFO]: Response: 401 GET /
+2025-04-17T06:26:15.144Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:26:15.147Z [INFO]: Response: 401 GET /me
+2025-04-17T06:26:15.149Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T06:26:15.152Z [INFO]: Response: 401 GET /
+2025-04-17T06:26:15.161Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:26:15.163Z [INFO]: Response: 401 GET /me
+2025-04-17T06:27:00.759Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T06:27:00.762Z [INFO]: Response: 401 GET /
+2025-04-17T06:27:00.766Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:27:00.769Z [INFO]: Response: 401 GET /me
+2025-04-17T06:27:00.784Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T06:27:00.786Z [INFO]: Response: 401 GET /
+2025-04-17T06:27:00.794Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:27:00.797Z [INFO]: Response: 401 GET /me
+2025-04-17T06:27:31.234Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:27:31.236Z [INFO]: Response: 401 GET /me
+2025-04-17T06:27:31.241Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:27:31.243Z [INFO]: Response: 401 GET /me
+2025-04-17T06:27:57.220Z [INFO]: Incoming Request: GET /api/auth/google
+2025-04-17T06:27:57.238Z [INFO]: Response: 302 GET /google
+2025-04-17T06:38:41.091Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:38:41.096Z [INFO]: Response: 401 GET /me
+2025-04-17T06:38:41.101Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:38:41.103Z [INFO]: Response: 401 GET /me
+2025-04-17T06:38:46.092Z [INFO]: Incoming Request: GET /api/auth/google
+2025-04-17T06:38:46.095Z [INFO]: Response: 302 GET /google
+2025-04-17T06:39:00.805Z [INFO]: Incoming Request: GET /api/auth/google/callback?code=4%2F0Ab_5qlnaEwjIy2zodUKmVYixi3ctnkGvn_jb8pZ8Ntre1PjHRXCBAwzqXxWYYmKGaBHyJg&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent
+2025-04-17T06:39:02.750Z [INFO]: Response: 302 GET /google/callback?code=4%2F0Ab_5qlnaEwjIy2zodUKmVYixi3ctnkGvn_jb8pZ8Ntre1PjHRXCBAwzqXxWYYmKGaBHyJg&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent
+2025-04-17T06:39:03.434Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:39:03.446Z [INFO]: Response: 200 GET /me
+2025-04-17T06:39:03.461Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:39:03.468Z [INFO]: Response: 304 GET /me
+2025-04-17T06:42:00.509Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:42:00.514Z [INFO]: Response: 304 GET /me
+2025-04-17T06:42:00.522Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:42:00.528Z [INFO]: Response: 304 GET /me
+2025-04-17T06:42:00.539Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:42:00.546Z [INFO]: Response: 304 GET /me
+2025-04-17T06:42:00.570Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:42:00.579Z [INFO]: Response: 304 GET /me
+2025-04-17T06:42:00.670Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T06:42:00.913Z [INFO]: Response: 200 GET /
+2025-04-17T06:42:00.922Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T06:42:00.954Z [INFO]: Response: 500 GET /
+2025-04-17T06:42:35.973Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:42:35.982Z [INFO]: Response: 304 GET /me
+2025-04-17T06:42:35.988Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T06:42:36.004Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:42:36.012Z [INFO]: Response: 304 GET /me
+2025-04-17T06:42:36.029Z [INFO]: Response: 500 GET /
+2025-04-17T06:42:36.041Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T06:42:36.050Z [INFO]: Response: 500 GET /
+2025-04-17T06:45:57.326Z [INFO]: Database connected successfully
+2025-04-17T06:45:57.470Z [INFO]: Database synchronized successfully
+2025-04-17T06:45:57.473Z [INFO]: Server is running on port 8080
+2025-04-17T06:51:29.908Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T06:51:29.929Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:51:29.962Z [INFO]: Response: 304 GET /me
+2025-04-17T06:51:29.974Z [INFO]: Response: 500 GET /
+2025-04-17T06:51:29.984Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:51:29.996Z [INFO]: Response: 304 GET /me
+2025-04-17T06:51:30.008Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T06:51:30.019Z [INFO]: Response: 500 GET /
+2025-04-17T06:55:17.937Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:55:17.947Z [INFO]: Response: 304 GET /me
+2025-04-17T06:55:17.969Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:55:17.979Z [INFO]: Response: 304 GET /me
+2025-04-17T06:57:24.222Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:57:24.230Z [INFO]: Response: 304 GET /me
+2025-04-17T06:57:24.242Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:57:24.247Z [INFO]: Response: 304 GET /me
+2025-04-17T06:58:05.523Z [INFO]: Incoming Request: POST /api/auth/signup
+2025-04-17T06:58:05.831Z [ERROR]: Error: User already exists | Stack: Error: User already exists
+    at signup (file:///C:/Users/Administrator/Desktop/devBook/backend/controllers/auth.controller.js:22:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-17T06:58:05.834Z [INFO]: Response: 400 POST /api/auth/signup
+2025-04-17T06:58:22.700Z [INFO]: Incoming Request: POST /api/auth/forgot-password
+2025-04-17T06:58:26.058Z [INFO]: Response: 200 POST /forgot-password
+2025-04-17T06:58:47.967Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:58:47.975Z [INFO]: Response: 304 GET /me
+2025-04-17T06:58:47.983Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T06:58:47.992Z [INFO]: Response: 304 GET /me
+2025-04-17T07:00:58.257Z [INFO]: Incoming Request: GET /api/auth/reset-password/4a5455aaa0b5cb7a82c268b343beeaff55362a8f
+2025-04-17T07:00:58.458Z [INFO]: Response: 200 GET /reset-password/4a5455aaa0b5cb7a82c268b343beeaff55362a8f
+2025-04-17T07:00:58.465Z [INFO]: Incoming Request: GET /api/auth/reset-password/4a5455aaa0b5cb7a82c268b343beeaff55362a8f
+2025-04-17T07:00:58.473Z [INFO]: Response: 304 GET /reset-password/4a5455aaa0b5cb7a82c268b343beeaff55362a8f
+2025-04-17T07:01:18.714Z [INFO]: Incoming Request: POST /api/auth/reset/4a5455aaa0b5cb7a82c268b343beeaff55362a8f
+2025-04-17T07:01:19.015Z [INFO]: Response: 200 POST /reset/4a5455aaa0b5cb7a82c268b343beeaff55362a8f
+2025-04-17T07:01:30.541Z [INFO]: Incoming Request: POST /api/auth/login
+2025-04-17T07:01:30.825Z [INFO]: Response: 200 POST /login
+2025-04-17T07:01:30.894Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T07:01:31.007Z [INFO]: Response: 200 GET /
+2025-04-17T07:01:31.012Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T07:01:31.021Z [INFO]: Response: 500 GET /
+2025-04-17T07:03:45.477Z [INFO]: Incoming Request: POST /api/auth/login
+2025-04-17T07:03:45.822Z [INFO]: Response: 200 POST /login
+2025-04-17T07:04:26.165Z [INFO]: Incoming Request: POST /api/dashboard
+2025-04-17T07:04:26.168Z [ERROR]: Error: Route not found | Stack: Error: Route not found
+    at file:///C:/Users/Administrator/Desktop/devBook/backend/index.js:105:19
+    at Layer.handle [as handle_request] (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:280:10)
+    at requestLogger (file:///C:/Users/Administrator/Desktop/devBook/backend/middlewares/logging.middleware.js:8:5)
+    at Layer.handle [as handle_request] (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:286:9
+2025-04-17T07:04:26.173Z [INFO]: Response: 404 POST /api/dashboard
+2025-04-17T07:04:31.585Z [INFO]: Incoming Request: GET /api/dashboard
+2025-04-17T07:04:31.586Z [ERROR]: Error: Route not found | Stack: Error: Route not found
+    at file:///C:/Users/Administrator/Desktop/devBook/backend/index.js:105:19
+    at Layer.handle [as handle_request] (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:280:10)
+    at requestLogger (file:///C:/Users/Administrator/Desktop/devBook/backend/middlewares/logging.middleware.js:8:5)
+    at Layer.handle [as handle_request] (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:286:9
+2025-04-17T07:04:31.590Z [INFO]: Response: 404 GET /api/dashboard
+2025-04-17T07:05:20.710Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T07:05:20.718Z [INFO]: Response: 500 GET /
+2025-04-17T07:07:58.600Z [INFO]: Database connected successfully
+2025-04-17T07:07:58.746Z [INFO]: Database synchronized successfully
+2025-04-17T07:07:58.749Z [INFO]: Server is running on port 8080
+2025-04-17T07:08:20.351Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T07:08:20.370Z [INFO]: Response: 200 GET /
+2025-04-17T07:08:58.927Z [INFO]: Database connected successfully
+2025-04-17T07:08:58.997Z [INFO]: Database synchronized successfully
+2025-04-17T07:08:58.999Z [INFO]: Server is running on port 8080
+2025-04-17T07:09:14.629Z [INFO]: Database connected successfully
+2025-04-17T07:09:14.693Z [INFO]: Database synchronized successfully
+2025-04-17T07:09:14.695Z [INFO]: Server is running on port 8080
+2025-04-17T07:10:58.096Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T07:10:58.106Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T07:10:58.125Z [INFO]: Response: 304 GET /me
+2025-04-17T07:10:58.134Z [INFO]: Response: 200 GET /
+2025-04-17T07:10:58.148Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T07:10:58.152Z [INFO]: Response: 304 GET /me
+2025-04-17T07:10:58.157Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T07:10:58.165Z [INFO]: Response: 304 GET /
+2025-04-17T07:13:22.220Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T07:13:22.230Z [INFO]: Response: 304 GET /
+2025-04-17T07:13:22.244Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T07:13:22.249Z [INFO]: Response: 304 GET /me
+2025-04-17T07:13:22.260Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T07:13:22.269Z [INFO]: Response: 304 GET /
+2025-04-17T07:13:22.271Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T07:13:22.277Z [INFO]: Response: 304 GET /me
+2025-04-17T07:13:28.229Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T07:13:28.238Z [INFO]: Response: 304 GET /
+2025-04-17T07:13:28.310Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T07:13:28.315Z [INFO]: Response: 304 GET /me
+2025-04-17T07:13:28.322Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T07:13:28.328Z [INFO]: Response: 304 GET /me
+2025-04-17T07:13:28.330Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T07:13:28.337Z [INFO]: Response: 304 GET /
+2025-04-17T07:14:00.356Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T07:14:00.368Z [INFO]: Response: 304 GET /
+2025-04-17T07:14:00.371Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T07:14:00.377Z [INFO]: Response: 304 GET /me
+2025-04-17T07:14:00.393Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T07:14:00.405Z [INFO]: Response: 304 GET /
+2025-04-17T07:14:00.424Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T07:14:00.431Z [INFO]: Response: 304 GET /me
+2025-04-17T07:20:03.222Z [INFO]: Incoming Request: GET /api/bookmarks
+2025-04-17T07:20:03.745Z [INFO]: Response: 304 GET /
+2025-04-17T07:20:08.311Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:20:08.318Z [INFO]: Response: 200 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:20:08.347Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:20:08.353Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:20:08.377Z [INFO]: Response: 200 GET /
+2025-04-17T07:20:08.379Z [INFO]: Response: 200 GET /
+2025-04-17T07:20:36.753Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:20:36.758Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:20:36.764Z [INFO]: Response: 304 GET /
+2025-04-17T07:20:36.772Z [INFO]: Response: 304 GET /
+2025-04-17T07:20:36.780Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:20:36.787Z [INFO]: Response: 304 GET /
+2025-04-17T07:20:36.799Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:20:36.807Z [INFO]: Response: 304 GET /
+2025-04-17T07:20:53.263Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:20:53.271Z [INFO]: Response: 304 GET /
+2025-04-17T07:20:53.272Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:20:53.278Z [INFO]: Response: 304 GET /
+2025-04-17T07:20:53.294Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T07:20:53.299Z [INFO]: Response: 304 GET /me
+2025-04-17T07:20:53.304Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:20:53.310Z [INFO]: Response: 304 GET /
+2025-04-17T07:20:53.329Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:20:53.336Z [INFO]: Response: 304 GET /
+2025-04-17T07:20:53.340Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T07:20:53.344Z [INFO]: Response: 304 GET /me
+2025-04-17T07:21:15.683Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:21:15.688Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T07:21:15.699Z [INFO]: Response: 304 GET /me
+2025-04-17T07:21:15.700Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:21:15.717Z [INFO]: Response: 304 GET /
+2025-04-17T07:21:15.729Z [INFO]: Response: 304 GET /
+2025-04-17T07:21:15.771Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T07:21:15.776Z [INFO]: Response: 304 GET /me
+2025-04-17T07:21:15.777Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:21:15.785Z [INFO]: Response: 304 GET /
+2025-04-17T07:21:15.787Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:21:15.794Z [INFO]: Response: 304 GET /
+2025-04-17T07:21:38.879Z [INFO]: Incoming Request: POST /api/categories
+2025-04-17T07:21:39.152Z [INFO]: Response: 201 POST /
+2025-04-17T07:21:44.752Z [INFO]: Incoming Request: POST /api/categories
+2025-04-17T07:21:44.762Z [INFO]: Response: 201 POST /
+2025-04-17T07:21:49.561Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:21:49.566Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:21:49.574Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:21:49.579Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:21:49.595Z [INFO]: Response: 200 GET /
+2025-04-17T07:21:49.597Z [INFO]: Response: 304 GET /
+2025-04-17T07:21:49.598Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:21:49.608Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:21:49.610Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:21:49.619Z [INFO]: Response: 304 GET /
+2025-04-17T07:21:49.620Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:21:49.630Z [INFO]: Response: 304 GET /
+2025-04-17T07:21:55.649Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:21:55.660Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:21:55.661Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:21:55.666Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:21:55.673Z [INFO]: Response: 304 GET /
+2025-04-17T07:21:55.678Z [INFO]: Response: 304 GET /
+2025-04-17T07:21:55.692Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:21:55.698Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:21:55.702Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:21:55.710Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:21:55.712Z [INFO]: Response: 304 GET /
+2025-04-17T07:21:55.725Z [INFO]: Response: 304 GET /
+2025-04-17T07:21:57.393Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:21:57.397Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:21:57.405Z [INFO]: Response: 304 GET /
+2025-04-17T07:21:57.409Z [INFO]: Response: 304 GET /
+2025-04-17T07:21:57.421Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:21:57.431Z [INFO]: Response: 304 GET /
+2025-04-17T07:21:57.432Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:21:57.440Z [INFO]: Response: 304 GET /
+2025-04-17T07:22:03.513Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:22:03.523Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:22:03.530Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:22:03.540Z [INFO]: Response: 304 GET /
+2025-04-17T07:22:03.541Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:22:03.554Z [INFO]: Response: 304 GET /
+2025-04-17T07:22:03.558Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:22:03.571Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:22:03.577Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:22:03.580Z [INFO]: Response: 304 GET /
+2025-04-17T07:22:03.584Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:22:03.593Z [INFO]: Response: 304 GET /
+2025-04-17T07:22:05.677Z [INFO]: Incoming Request: POST /api/auth/logout
+2025-04-17T07:22:05.683Z [INFO]: Response: 200 POST /logout
+2025-04-17T07:23:25.031Z [INFO]: Incoming Request: POST /api/auth/login
+2025-04-17T07:23:25.336Z [INFO]: Response: 200 POST /login
+2025-04-17T07:23:25.508Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:23:25.514Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:23:25.520Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:23:25.521Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:23:25.527Z [INFO]: Response: 304 GET /
+2025-04-17T07:23:25.530Z [INFO]: Response: 304 GET /
+2025-04-17T07:23:25.538Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:23:25.546Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:23:25.563Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:23:25.568Z [INFO]: Response: 304 GET /
+2025-04-17T07:23:25.571Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:23:25.579Z [INFO]: Response: 304 GET /
+2025-04-17T07:23:40.573Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:23:40.577Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:23:40.583Z [INFO]: Response: 304 GET /
+2025-04-17T07:23:40.589Z [INFO]: Response: 304 GET /
+2025-04-17T07:23:40.590Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:23:40.599Z [INFO]: Response: 304 GET /
+2025-04-17T07:23:40.606Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:23:40.616Z [INFO]: Response: 304 GET /
+2025-04-17T07:29:28.350Z [INFO]: Incoming Request: POST /api/auth/login
+2025-04-17T07:29:28.712Z [INFO]: Response: 200 POST /login
+2025-04-17T07:29:28.940Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:29:28.944Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:29:28.949Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:29:28.956Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:29:28.958Z [INFO]: Response: 304 GET /
+2025-04-17T07:29:28.961Z [INFO]: Response: 304 GET /
+2025-04-17T07:29:28.975Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:29:28.986Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:29:29.010Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:29:29.020Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:29:29.028Z [INFO]: Response: 304 GET /
+2025-04-17T07:29:29.033Z [INFO]: Response: 304 GET /
+2025-04-17T07:29:32.306Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:29:32.316Z [INFO]: Response: 304 GET /
+2025-04-17T07:29:32.325Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:29:32.335Z [INFO]: Response: 304 GET /
+2025-04-17T07:29:32.343Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:29:32.348Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:29:32.354Z [INFO]: Response: 304 GET /
+2025-04-17T07:29:32.363Z [INFO]: Response: 304 GET /
+2025-04-17T07:30:40.278Z [INFO]: Incoming Request: POST /api/bookmarks
+2025-04-17T07:30:40.528Z [INFO]: Response: 201 POST /
+2025-04-17T07:30:40.758Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:30:40.769Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:30:40.770Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:30:40.776Z [INFO]: Response: 304 GET /
+2025-04-17T07:30:40.839Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:30:40.850Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:30:40.883Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:30:40.915Z [INFO]: Response: 304 GET /
+2025-04-17T07:30:40.937Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:30:40.943Z [INFO]: Response: 304 GET /
+2025-04-17T07:30:40.957Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:30:40.970Z [INFO]: Response: 304 GET /
+2025-04-17T07:30:53.025Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:30:53.031Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:30:53.035Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T07:30:53.041Z [INFO]: Response: 304 GET /me
+2025-04-17T07:30:53.047Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:30:53.054Z [INFO]: Response: 304 GET /
+2025-04-17T07:30:53.094Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:30:53.101Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T07:30:53.106Z [INFO]: Response: 304 GET /me
+2025-04-17T07:30:53.150Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:30:53.157Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:30:53.171Z [INFO]: Response: 304 GET /
+2025-04-17T07:30:53.179Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:30:53.185Z [INFO]: Response: 304 GET /
+2025-04-17T07:30:53.195Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:30:53.204Z [INFO]: Response: 304 GET /
+2025-04-17T07:34:41.464Z [INFO]: Database connected successfully
+2025-04-17T07:34:41.579Z [INFO]: Database synchronized successfully
+2025-04-17T07:34:41.581Z [INFO]: Server is running on port 8080
+2025-04-17T07:35:06.926Z [INFO]: Database connected successfully
+2025-04-17T07:35:07.031Z [INFO]: Database synchronized successfully
+2025-04-17T07:35:07.034Z [INFO]: Server is running on port 8080
+2025-04-17T07:35:42.991Z [INFO]: Database connected successfully
+2025-04-17T07:35:43.124Z [INFO]: Database synchronized successfully
+2025-04-17T07:35:43.127Z [INFO]: Server is running on port 8080
+2025-04-17T07:36:11.575Z [INFO]: Database connected successfully
+2025-04-17T07:36:11.654Z [INFO]: Database synchronized successfully
+2025-04-17T07:36:11.656Z [INFO]: Server is running on port 8080
+2025-04-17T07:36:24.840Z [INFO]: Database connected successfully
+2025-04-17T07:36:24.942Z [INFO]: Database synchronized successfully
+2025-04-17T07:36:24.948Z [INFO]: Server is running on port 8080
+2025-04-17T07:38:05.438Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T07:38:05.467Z [INFO]: Response: 304 GET /me
+2025-04-17T07:38:05.532Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:38:05.547Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:38:05.563Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:38:05.628Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T07:38:05.649Z [INFO]: Response: 304 GET /me
+2025-04-17T07:38:06.027Z [INFO]: Response: 200 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:38:06.028Z [INFO]: Response: 304 GET /
+2025-04-17T07:38:06.029Z [INFO]: Response: 304 GET /
+2025-04-17T07:38:06.062Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:38:06.078Z [INFO]: Response: 304 GET /
+2025-04-17T07:38:06.086Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:38:06.097Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:38:06.120Z [INFO]: Response: 304 GET /
+2025-04-17T07:38:06.121Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:38:18.551Z [INFO]: Incoming Request: GET /api/bookmarks/11
+2025-04-17T07:38:18.572Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:38:18.582Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:38:18.612Z [INFO]: Response: 304 GET /
+2025-04-17T07:38:18.635Z [INFO]: Response: 304 GET /
+2025-04-17T07:38:18.660Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:38:18.665Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:38:18.675Z [INFO]: Response: 304 GET /
+2025-04-17T07:38:18.683Z [INFO]: Response: 304 GET /
+2025-04-17T07:38:18.773Z [INFO]: Response: 200 GET /11
+2025-04-17T07:38:18.778Z [INFO]: Incoming Request: GET /api/bookmarks/11
+2025-04-17T07:38:18.784Z [INFO]: Response: 304 GET /11
+2025-04-17T07:38:36.013Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:38:36.029Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:38:36.036Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:38:36.040Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:38:36.051Z [INFO]: Response: 304 GET /
+2025-04-17T07:38:36.056Z [INFO]: Response: 304 GET /
+2025-04-17T07:38:36.063Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:38:36.104Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:38:36.123Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:38:36.128Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:38:36.142Z [INFO]: Response: 304 GET /
+2025-04-17T07:38:36.152Z [INFO]: Response: 304 GET /
+2025-04-17T07:38:39.274Z [INFO]: Incoming Request: DELETE /api/bookmarks/11
+2025-04-17T07:38:39.427Z [INFO]: Response: 200 DELETE /11
+2025-04-17T07:38:39.443Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:38:39.450Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:38:39.474Z [INFO]: Response: 304 GET /
+2025-04-17T07:38:39.478Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:38:39.492Z [INFO]: Response: 304 GET /
+2025-04-17T07:38:39.504Z [INFO]: Response: 200 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:39:01.128Z [INFO]: Incoming Request: POST /api/auth/logout
+2025-04-17T07:39:01.134Z [INFO]: Response: 200 POST /logout
+2025-04-17T07:39:17.647Z [INFO]: Incoming Request: POST /api/auth/login
+2025-04-17T07:39:17.939Z [INFO]: Response: 200 POST /login
+2025-04-17T07:39:18.159Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:39:18.166Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:39:18.176Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:39:18.182Z [INFO]: Response: 304 GET /
+2025-04-17T07:39:18.187Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:39:18.245Z [INFO]: Response: 304 GET /
+2025-04-17T07:39:18.261Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:39:18.267Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:39:18.286Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:39:18.306Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:39:18.318Z [INFO]: Response: 304 GET /
+2025-04-17T07:39:18.325Z [INFO]: Response: 304 GET /
+2025-04-17T07:39:32.459Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:39:32.474Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:39:32.475Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:39:32.481Z [INFO]: Response: 304 GET /
+2025-04-17T07:39:32.491Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T07:39:32.496Z [INFO]: Response: 304 GET /me
+2025-04-17T07:39:32.512Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:39:32.518Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:39:32.527Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:39:32.547Z [INFO]: Response: 304 GET /
+2025-04-17T07:39:32.550Z [INFO]: Response: 304 GET /
+2025-04-17T07:39:32.551Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:39:32.561Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T07:39:32.567Z [INFO]: Response: 304 GET /me
+2025-04-17T07:39:32.574Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:39:32.581Z [INFO]: Response: 304 GET /
+2025-04-17T07:39:58.788Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:39:58.794Z [INFO]: Response: 304 GET /
+2025-04-17T07:39:58.806Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:39:58.813Z [INFO]: Response: 304 GET /
+2025-04-17T07:39:58.825Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:39:58.835Z [INFO]: Response: 304 GET /
+2025-04-17T07:39:58.836Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:39:58.843Z [INFO]: Response: 304 GET /
+2025-04-17T07:40:07.104Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:40:07.110Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:40:07.124Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:40:07.125Z [INFO]: Response: 304 GET /
+2025-04-17T07:40:07.128Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:40:07.137Z [INFO]: Response: 304 GET /
+2025-04-17T07:40:07.153Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:40:07.164Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:40:07.189Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:40:07.206Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:40:07.220Z [INFO]: Response: 304 GET /
+2025-04-17T07:40:07.224Z [INFO]: Response: 304 GET /
+2025-04-17T07:40:20.461Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:40:20.470Z [INFO]: Response: 304 GET /
+2025-04-17T07:40:20.472Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:40:20.479Z [INFO]: Response: 304 GET /
+2025-04-17T07:40:20.501Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:40:20.511Z [INFO]: Response: 304 GET /
+2025-04-17T07:40:20.517Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:40:20.523Z [INFO]: Response: 304 GET /
+2025-04-17T07:40:48.145Z [INFO]: Incoming Request: POST /api/categories
+2025-04-17T07:40:48.323Z [INFO]: Response: 201 POST /
+2025-04-17T07:40:53.656Z [INFO]: Incoming Request: POST /api/tags
+2025-04-17T07:40:53.676Z [INFO]: Response: 201 POST /
+2025-04-17T07:41:02.031Z [INFO]: Incoming Request: POST /api/bookmarks
+2025-04-17T07:41:02.095Z [INFO]: Response: 201 POST /
+2025-04-17T07:41:02.367Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:41:02.371Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:41:02.381Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:41:02.409Z [INFO]: Response: 200 GET /
+2025-04-17T07:41:02.438Z [INFO]: Response: 200 GET /
+2025-04-17T07:41:02.492Z [INFO]: Response: 200 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:41:02.525Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:41:02.534Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:41:02.543Z [INFO]: Response: 304 GET /
+2025-04-17T07:41:02.544Z [INFO]: Response: 304 GET /
+2025-04-17T07:41:02.545Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:41:02.562Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:41:08.209Z [INFO]: Incoming Request: POST /api/auth/logout
+2025-04-17T07:41:08.214Z [INFO]: Response: 200 POST /logout
+2025-04-17T07:41:20.916Z [INFO]: Incoming Request: POST /api/auth/login
+2025-04-17T07:41:21.242Z [INFO]: Response: 200 POST /login
+2025-04-17T07:41:21.423Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:41:21.439Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:41:21.446Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:41:21.453Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:41:21.467Z [INFO]: Response: 304 GET /
+2025-04-17T07:41:21.486Z [INFO]: Response: 304 GET /
+2025-04-17T07:41:21.510Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:41:21.524Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:41:21.553Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:41:21.580Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:41:21.587Z [INFO]: Response: 304 GET /
+2025-04-17T07:41:21.589Z [INFO]: Response: 304 GET /
+2025-04-17T07:42:05.969Z [INFO]: Incoming Request: GET /api/bookmarks/12
+2025-04-17T07:42:05.980Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:42:05.989Z [INFO]: Response: 304 GET /
+2025-04-17T07:42:06.001Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:42:06.019Z [INFO]: Response: 304 GET /
+2025-04-17T07:42:06.024Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:42:06.040Z [INFO]: Response: 304 GET /
+2025-04-17T07:42:06.064Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:42:06.071Z [INFO]: Response: 304 GET /
+2025-04-17T07:42:06.186Z [INFO]: Response: 200 GET /12
+2025-04-17T07:42:06.190Z [INFO]: Incoming Request: GET /api/bookmarks/12
+2025-04-17T07:42:06.197Z [INFO]: Response: 304 GET /12
+2025-04-17T07:42:15.083Z [INFO]: Incoming Request: PUT /api/bookmarks/12
+2025-04-17T07:42:15.126Z [INFO]: Response: 200 PUT /12
+2025-04-17T07:42:15.285Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:42:15.290Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:42:15.307Z [INFO]: Response: 304 GET /
+2025-04-17T07:42:15.308Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:42:15.318Z [INFO]: Response: 304 GET /
+2025-04-17T07:42:15.328Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T07:42:15.389Z [INFO]: Response: 304 GET /
+2025-04-17T07:42:15.404Z [INFO]: Response: 200 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:42:15.405Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T07:42:15.427Z [INFO]: Response: 304 GET /
+2025-04-17T07:42:15.429Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T07:42:15.454Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:09:44.073Z [INFO]: Incoming Request: POST /api/auth/logout
+2025-04-17T08:09:44.153Z [INFO]: Response: 200 POST /logout
+2025-04-17T08:28:50.564Z [INFO]: Incoming Request: POST /api/auth/login
+2025-04-17T08:28:51.112Z [INFO]: Response: 200 POST /login
+2025-04-17T08:28:51.324Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:28:51.332Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:28:51.344Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:28:51.497Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:28:51.506Z [INFO]: Response: 304 GET /
+2025-04-17T08:28:51.518Z [INFO]: Response: 304 GET /
+2025-04-17T08:28:51.551Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:28:51.584Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:28:51.605Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:28:51.649Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:28:51.650Z [INFO]: Response: 304 GET /
+2025-04-17T08:28:51.664Z [INFO]: Response: 304 GET /
+2025-04-17T08:38:34.332Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:38:34.337Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:38:34.351Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:38:34.352Z [INFO]: Response: 304 GET /
+2025-04-17T08:38:34.356Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:38:34.361Z [INFO]: Response: 304 GET /
+2025-04-17T08:38:34.382Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T08:38:34.386Z [INFO]: Response: 304 GET /me
+2025-04-17T08:38:34.391Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:38:34.395Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:38:34.406Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:38:34.408Z [INFO]: Response: 304 GET /
+2025-04-17T08:38:34.420Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:38:34.426Z [INFO]: Response: 304 GET /
+2025-04-17T08:38:34.431Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T08:38:34.436Z [INFO]: Response: 304 GET /me
+2025-04-17T08:38:51.876Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=serty&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:38:51.884Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:38:51.898Z [INFO]: Response: 200 GET /?search=&category=serty&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:38:51.901Z [INFO]: Response: 304 GET /
+2025-04-17T08:38:51.903Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:38:51.917Z [INFO]: Response: 304 GET /
+2025-04-17T08:38:53.106Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:38:53.116Z [INFO]: Response: 304 GET /
+2025-04-17T08:38:53.119Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:38:53.123Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=asrtyj&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:38:53.129Z [INFO]: Response: 304 GET /
+2025-04-17T08:38:53.139Z [INFO]: Response: 200 GET /?search=&category=asrtyj&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:38:56.134Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:38:56.143Z [INFO]: Response: 304 GET /
+2025-04-17T08:38:56.148Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:38:56.152Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=ws&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:38:56.158Z [INFO]: Response: 304 GET /
+2025-04-17T08:38:56.169Z [INFO]: Response: 200 GET /?search=&category=ws&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:38:59.142Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:38:59.146Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:38:59.150Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:38:59.165Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:38:59.167Z [INFO]: Response: 304 GET /
+2025-04-17T08:38:59.169Z [INFO]: Response: 304 GET /
+2025-04-17T08:39:19.208Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=test1234&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:39:19.224Z [INFO]: Response: 200 GET /?search=&category=&tag=test1234&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:39:19.225Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:39:19.230Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:39:19.236Z [INFO]: Response: 304 GET /
+2025-04-17T08:39:19.238Z [INFO]: Response: 304 GET /
+2025-04-17T08:39:22.720Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:39:22.729Z [INFO]: Response: 304 GET /
+2025-04-17T08:39:22.730Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=test1234&sortBy=createdAt&sortOrder=desc
+2025-04-17T08:39:22.735Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:39:22.749Z [INFO]: Response: 200 GET /?search=&category=&tag=test1234&sortBy=createdAt&sortOrder=desc
+2025-04-17T08:39:22.753Z [INFO]: Response: 304 GET /
+2025-04-17T08:39:23.780Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=test1234&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:39:23.802Z [INFO]: Response: 304 GET /?search=&category=&tag=test1234&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:39:23.804Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:39:23.811Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:39:23.827Z [INFO]: Response: 304 GET /
+2025-04-17T08:39:23.831Z [INFO]: Response: 304 GET /
+2025-04-17T08:40:40.847Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:40:40.857Z [INFO]: Response: 304 GET /
+2025-04-17T08:40:40.859Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:40:40.870Z [INFO]: Response: 304 GET /
+2025-04-17T08:40:40.886Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:40:40.896Z [INFO]: Response: 304 GET /
+2025-04-17T08:40:40.902Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:40:40.909Z [INFO]: Response: 304 GET /
+2025-04-17T08:41:37.251Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:41:37.259Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:41:37.267Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:41:37.285Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:41:37.286Z [INFO]: Response: 304 GET /
+2025-04-17T08:41:37.293Z [INFO]: Response: 304 GET /
+2025-04-17T08:41:37.309Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:41:37.316Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:41:37.320Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:41:37.337Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T08:41:37.339Z [INFO]: Response: 304 GET /
+2025-04-17T08:41:37.349Z [INFO]: Response: 304 GET /
+2025-04-17T08:42:50.853Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:42:50.868Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:42:50.877Z [INFO]: Response: 304 GET /
+2025-04-17T08:42:50.922Z [INFO]: Response: 304 GET /
+2025-04-17T08:42:50.931Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:42:50.937Z [INFO]: Response: 304 GET /
+2025-04-17T08:42:50.943Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:42:50.954Z [INFO]: Response: 304 GET /
+2025-04-17T08:49:24.776Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:49:25.109Z [INFO]: Response: 304 GET /
+2025-04-17T08:49:25.130Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:49:25.147Z [INFO]: Response: 304 GET /
+2025-04-17T08:49:26.259Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:49:26.266Z [INFO]: Response: 304 GET /
+2025-04-17T08:49:26.267Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T08:49:26.272Z [INFO]: Response: 304 GET /me
+2025-04-17T08:49:26.276Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:49:26.282Z [INFO]: Response: 304 GET /
+2025-04-17T08:49:26.307Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T08:49:26.311Z [INFO]: Response: 304 GET /me
+2025-04-17T08:49:26.331Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:49:26.337Z [INFO]: Response: 304 GET /
+2025-04-17T08:49:26.349Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:49:26.355Z [INFO]: Response: 304 GET /
+2025-04-17T08:50:47.788Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:50:47.794Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T08:50:47.800Z [INFO]: Response: 304 GET /me
+2025-04-17T08:50:47.803Z [INFO]: Response: 304 GET /
+2025-04-17T08:50:47.815Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T08:50:47.823Z [INFO]: Response: 304 GET /me
+2025-04-17T08:50:47.834Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:50:47.846Z [INFO]: Response: 304 GET /
+2025-04-17T08:50:48.041Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:50:48.050Z [INFO]: Response: 304 GET /
+2025-04-17T08:50:48.079Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:50:48.086Z [INFO]: Response: 304 GET /
+2025-04-17T08:57:45.250Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:57:45.260Z [INFO]: Response: 304 GET /
+2025-04-17T08:57:45.264Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T08:57:45.268Z [INFO]: Response: 304 GET /me
+2025-04-17T08:57:45.275Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:57:45.279Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T08:57:45.284Z [INFO]: Response: 304 GET /me
+2025-04-17T08:57:45.286Z [INFO]: Response: 304 GET /
+2025-04-17T08:57:45.316Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:57:45.323Z [INFO]: Response: 304 GET /
+2025-04-17T08:57:45.333Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:57:45.339Z [INFO]: Response: 304 GET /
+2025-04-17T08:57:52.294Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:57:52.302Z [INFO]: Response: 304 GET /
+2025-04-17T08:57:52.303Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T08:57:52.309Z [INFO]: Response: 304 GET /me
+2025-04-17T08:57:52.313Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:57:52.320Z [INFO]: Response: 304 GET /
+2025-04-17T08:57:52.327Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T08:57:52.331Z [INFO]: Response: 304 GET /me
+2025-04-17T08:57:52.513Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:57:52.524Z [INFO]: Response: 304 GET /
+2025-04-17T08:57:52.554Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:57:52.562Z [INFO]: Response: 304 GET /
+2025-04-17T08:58:07.276Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:58:07.283Z [INFO]: Response: 304 GET /
+2025-04-17T08:58:07.290Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:58:07.296Z [INFO]: Response: 304 GET /
+2025-04-17T08:58:07.309Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T08:58:07.313Z [INFO]: Response: 304 GET /me
+2025-04-17T08:58:07.324Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:58:07.346Z [INFO]: Response: 304 GET /
+2025-04-17T08:58:07.364Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:58:07.372Z [INFO]: Response: 304 GET /
+2025-04-17T08:58:07.376Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T08:58:07.381Z [INFO]: Response: 304 GET /me
+2025-04-17T08:58:17.457Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:58:17.462Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T08:58:17.468Z [INFO]: Response: 304 GET /me
+2025-04-17T08:58:17.469Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:58:17.475Z [INFO]: Response: 304 GET /
+2025-04-17T08:58:17.478Z [INFO]: Response: 304 GET /
+2025-04-17T08:58:17.487Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T08:58:17.494Z [INFO]: Response: 304 GET /me
+2025-04-17T08:58:17.507Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T08:58:17.511Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T08:58:17.517Z [INFO]: Response: 304 GET /
+2025-04-17T08:58:17.519Z [INFO]: Response: 304 GET /
+2025-04-17T09:01:35.256Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:01:35.261Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:01:35.272Z [INFO]: Response: 304 GET /
+2025-04-17T09:01:35.273Z [INFO]: Response: 304 GET /
+2025-04-17T09:01:41.478Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T09:01:41.484Z [INFO]: Response: 304 GET /me
+2025-04-17T09:01:41.504Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:01:41.511Z [INFO]: Response: 304 GET /
+2025-04-17T09:01:41.526Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:01:41.538Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T09:01:41.543Z [INFO]: Response: 304 GET /me
+2025-04-17T09:01:41.547Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:01:41.559Z [INFO]: Response: 304 GET /
+2025-04-17T09:01:41.565Z [INFO]: Response: 304 GET /
+2025-04-17T09:01:41.569Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:01:41.575Z [INFO]: Response: 304 GET /
+2025-04-17T09:21:23.209Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:21:23.252Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:21:23.262Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:21:23.559Z [INFO]: Response: 304 GET /
+2025-04-17T09:21:23.568Z [INFO]: Response: 304 GET /
+2025-04-17T09:21:23.571Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:21:23.583Z [INFO]: Response: 304 GET /
+2025-04-17T09:21:23.585Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:21:23.598Z [INFO]: Response: 304 GET /
+2025-04-17T09:21:23.607Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:21:23.613Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:21:23.634Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:21:33.684Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=testtag&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:21:33.700Z [INFO]: Response: 200 GET /?search=&category=&tag=testtag&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:21:33.705Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:21:33.709Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:21:33.720Z [INFO]: Response: 304 GET /
+2025-04-17T09:21:33.724Z [INFO]: Response: 304 GET /
+2025-04-17T09:21:36.952Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:21:36.958Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:21:36.965Z [INFO]: Response: 304 GET /
+2025-04-17T09:21:36.966Z [INFO]: Response: 304 GET /
+2025-04-17T09:21:36.968Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=ghj&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:21:36.981Z [INFO]: Response: 200 GET /?search=&category=&tag=ghj&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:23:44.524Z [INFO]: Database connected successfully
+2025-04-17T09:23:44.695Z [INFO]: Database synchronized successfully
+2025-04-17T09:23:44.697Z [INFO]: Server is running on port 8080
+2025-04-17T09:23:58.611Z [INFO]: Database connected successfully
+2025-04-17T09:23:58.696Z [INFO]: Database synchronized successfully
+2025-04-17T09:23:58.698Z [INFO]: Server is running on port 8080
+2025-04-17T09:24:00.271Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T09:24:00.289Z [INFO]: Response: 304 GET /me
+2025-04-17T09:24:00.293Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:24:00.312Z [INFO]: Response: 500 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:24:00.314Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:24:00.320Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:24:00.335Z [INFO]: Response: 304 GET /
+2025-04-17T09:24:00.339Z [INFO]: Response: 304 GET /
+2025-04-17T09:24:00.343Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T09:24:00.351Z [INFO]: Response: 304 GET /me
+2025-04-17T09:24:00.355Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:24:00.370Z [INFO]: Response: 500 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:24:00.384Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:24:00.396Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:24:00.403Z [INFO]: Response: 304 GET /
+2025-04-17T09:24:00.412Z [INFO]: Response: 304 GET /
+2025-04-17T09:24:06.235Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:24:06.250Z [INFO]: Response: 500 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:24:06.257Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T09:24:06.262Z [INFO]: Response: 304 GET /me
+2025-04-17T09:24:06.265Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:24:06.271Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:24:06.305Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:24:06.325Z [INFO]: Response: 500 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:24:06.388Z [INFO]: Response: 304 GET /
+2025-04-17T09:24:06.425Z [INFO]: Response: 304 GET /
+2025-04-17T09:24:06.514Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T09:24:06.557Z [INFO]: Response: 304 GET /me
+2025-04-17T09:24:06.600Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:24:06.648Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:24:06.707Z [INFO]: Response: 304 GET /
+2025-04-17T09:24:06.750Z [INFO]: Response: 304 GET /
+2025-04-17T09:24:17.959Z [INFO]: Incoming Request: POST /api/auth/logout
+2025-04-17T09:24:17.964Z [INFO]: Response: 200 POST /logout
+2025-04-17T09:24:26.073Z [INFO]: Incoming Request: POST /api/auth/login
+2025-04-17T09:24:26.433Z [INFO]: Response: 200 POST /login
+2025-04-17T09:24:26.580Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:24:26.596Z [INFO]: Response: 500 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:24:26.598Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:24:26.608Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:24:26.621Z [INFO]: Response: 304 GET /
+2025-04-17T09:24:26.624Z [INFO]: Response: 304 GET /
+2025-04-17T09:24:26.626Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:24:26.645Z [INFO]: Response: 500 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:24:26.659Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:24:26.665Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:24:26.673Z [INFO]: Response: 304 GET /
+2025-04-17T09:24:26.675Z [INFO]: Response: 304 GET /
+2025-04-17T09:24:28.725Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:24:28.731Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:24:28.738Z [INFO]: Response: 304 GET /
+2025-04-17T09:24:28.740Z [INFO]: Response: 304 GET /
+2025-04-17T09:24:28.747Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:24:28.756Z [INFO]: Response: 304 GET /
+2025-04-17T09:24:28.758Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:24:28.766Z [INFO]: Response: 304 GET /
+2025-04-17T09:25:10.210Z [INFO]: Incoming Request: POST /api/tags
+2025-04-17T09:25:10.360Z [INFO]: Response: 201 POST /
+2025-04-17T09:25:18.408Z [INFO]: Incoming Request: POST /api/bookmarks
+2025-04-17T09:25:18.545Z [INFO]: Response: 201 POST /
+2025-04-17T09:25:18.696Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:25:18.700Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:25:18.716Z [INFO]: Response: 500 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:25:18.729Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:25:18.736Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:25:18.750Z [INFO]: Response: 500 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:25:18.758Z [INFO]: Response: 304 GET /
+2025-04-17T09:25:18.764Z [INFO]: Response: 200 GET /
+2025-04-17T09:25:18.780Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:25:18.783Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:25:18.788Z [INFO]: Response: 304 GET /
+2025-04-17T09:25:18.792Z [INFO]: Response: 304 GET /
+2025-04-17T09:25:52.099Z [INFO]: Database connected successfully
+2025-04-17T09:25:52.213Z [INFO]: Database synchronized successfully
+2025-04-17T09:25:52.216Z [INFO]: Server is running on port 8080
+2025-04-17T09:26:07.933Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T09:26:07.947Z [INFO]: Response: 304 GET /me
+2025-04-17T09:26:07.949Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:26:08.007Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:26:08.018Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:26:08.036Z [INFO]: Response: 304 GET /
+2025-04-17T09:26:08.042Z [INFO]: Response: 304 GET /
+2025-04-17T09:26:08.057Z [INFO]: Incoming Request: GET /api/auth/me
+2025-04-17T09:26:08.085Z [INFO]: Response: 304 GET /me
+2025-04-17T09:26:08.186Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:26:08.207Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:26:08.225Z [INFO]: Response: 304 GET /
+2025-04-17T09:26:08.230Z [INFO]: Response: 304 GET /
+2025-04-17T09:26:08.350Z [INFO]: Response: 200 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:26:08.354Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:26:08.380Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:26:16.098Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=serty&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:26:16.127Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:26:16.140Z [INFO]: Response: 200 GET /?search=&category=serty&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:26:16.142Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:26:16.150Z [INFO]: Response: 304 GET /
+2025-04-17T09:26:16.155Z [INFO]: Response: 304 GET /
+2025-04-17T09:26:19.413Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:26:19.419Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:26:19.428Z [INFO]: Response: 304 GET /
+2025-04-17T09:26:19.430Z [INFO]: Response: 304 GET /
+2025-04-17T09:26:19.431Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=asrtyj&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:26:19.458Z [INFO]: Response: 200 GET /?search=&category=asrtyj&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:26:20.844Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:26:20.849Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:26:20.856Z [INFO]: Response: 304 GET /
+2025-04-17T09:26:20.857Z [INFO]: Response: 304 GET /
+2025-04-17T09:26:20.859Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=ws&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:26:20.888Z [INFO]: Response: 304 GET /?search=&category=ws&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:26:26.626Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:26:26.639Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:26:26.645Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:26:26.665Z [INFO]: Response: 304 GET /?search=&category=&tag=&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:26:26.670Z [INFO]: Response: 304 GET /
+2025-04-17T09:26:26.671Z [INFO]: Response: 304 GET /
+2025-04-17T09:26:36.929Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=scxs&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:26:36.943Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:26:36.955Z [INFO]: Response: 200 GET /?search=&category=&tag=scxs&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:26:36.964Z [INFO]: Response: 304 GET /
+2025-04-17T09:26:36.967Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:26:36.977Z [INFO]: Response: 304 GET /
+2025-04-17T09:26:41.144Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:26:41.149Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:26:41.157Z [INFO]: Response: 304 GET /
+2025-04-17T09:26:41.159Z [INFO]: Response: 304 GET /
+2025-04-17T09:26:41.164Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=scxs&sortBy=title&sortOrder=asc
+2025-04-17T09:26:41.184Z [INFO]: Response: 200 GET /?search=&category=&tag=scxs&sortBy=title&sortOrder=asc
+2025-04-17T09:26:43.478Z [INFO]: Incoming Request: GET /api/bookmarks?search=&category=&tag=scxs&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:26:43.489Z [INFO]: Incoming Request: GET /api/categories
+2025-04-17T09:26:43.494Z [INFO]: Incoming Request: GET /api/tags
+2025-04-17T09:26:43.508Z [INFO]: Response: 304 GET /?search=&category=&tag=scxs&sortBy=createdAt&sortOrder=asc
+2025-04-17T09:26:43.514Z [INFO]: Response: 304 GET /
+2025-04-17T09:26:43.515Z [INFO]: Response: 304 GET /
+2025-04-17T09:27:00.754Z [INFO]: Incoming Request: POST /api/auth/logout
+2025-04-17T09:27:00.762Z [INFO]: Response: 200 POST /logout

@@ -1,0 +1,25 @@
+2025-04-17T06:58:05.831Z [ERROR]: Error: User already exists | Stack: Error: User already exists
+    at signup (file:///C:/Users/Administrator/Desktop/devBook/backend/controllers/auth.controller.js:22:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-17T07:04:26.168Z [ERROR]: Error: Route not found | Stack: Error: Route not found
+    at file:///C:/Users/Administrator/Desktop/devBook/backend/index.js:105:19
+    at Layer.handle [as handle_request] (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:280:10)
+    at requestLogger (file:///C:/Users/Administrator/Desktop/devBook/backend/middlewares/logging.middleware.js:8:5)
+    at Layer.handle [as handle_request] (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:286:9
+2025-04-17T07:04:31.586Z [ERROR]: Error: Route not found | Stack: Error: Route not found
+    at file:///C:/Users/Administrator/Desktop/devBook/backend/index.js:105:19
+    at Layer.handle [as handle_request] (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:280:10)
+    at requestLogger (file:///C:/Users/Administrator/Desktop/devBook/backend/middlewares/logging.middleware.js:8:5)
+    at Layer.handle [as handle_request] (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:286:9
