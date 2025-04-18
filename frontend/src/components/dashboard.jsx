@@ -17,7 +17,10 @@ import {
 import { BiCategoryAlt } from "react-icons/bi";
 import { AiOutlineTags } from "react-icons/ai";
 
-const API_URL = "http://localhost:8080/api";
+const axiosInstance = axios.create({
+    baseURL: "http://localhost:8080/api",
+    withCredentials: true, // Ensures cookies are sent with requests
+});
 
 const Dashboard = () => {
     const navigate = useNavigate();
@@ -45,7 +48,7 @@ const Dashboard = () => {
             };
 
             const [bookmarksRes, categoriesRes, tagsRes] = await Promise.all([
-                axios.get(`${API_URL}/bookmarks`, {
+                axiosInstance.get(`/bookmarks`, {
                     params: {
                         search,
                         category: categoryFilter,
@@ -55,8 +58,8 @@ const Dashboard = () => {
                     },
                     ...config,
                 }),
-                axios.get(`${API_URL}/categories`, config),
-                axios.get(`${API_URL}/tags`, config),
+                axiosInstance.get(`/categories`, config),
+                axiosInstance.get(`/tags`, config),
             ]);
 
             setBookmarks(bookmarksRes.data.data);
@@ -84,7 +87,7 @@ const Dashboard = () => {
                 },
             };
 
-            await axios.delete(`${API_URL}/bookmarks/${id}`, config);
+            await axiosInstance.delete(`/bookmarks/${id}`, config);
             toast.success("Bookmark deleted successfully");
             fetchData();
         } catch (error) {
@@ -307,52 +310,6 @@ const Dashboard = () => {
                                 key={bookmark.id}
                                 className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 overflow-hidden flex flex-col"
                             >
-                                {/* Link Preview Image */}
-                                <div className="relative h-40 bg-gray-100 overflow-hidden">
-                                    {bookmark.previewImage ? (
-                                        <img
-                                            src={bookmark.previewImage}
-                                            alt={bookmark.title}
-                                            className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                                        />
-                                    ) : (
-                                        <div className="flex items-center justify-center h-full bg-gradient-to-r from-gray-100 to-gray-200">
-                                            <div className="bg-white p-3 rounded-full">
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    className="h-8 w-8 text-gray-400"
-                                                    fill="none"
-                                                    viewBox="0 0 24 24"
-                                                    stroke="currentColor"
-                                                >
-                                                    <path
-                                                        strokeLinecap="round"
-                                                        strokeLinejoin="round"
-                                                        strokeWidth={2}
-                                                        d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
-                                                    />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    )}
-
-                                    {/* Site favicon/domain */}
-                                    <div className="absolute top-3 left-3 bg-white bg-opacity-90 rounded-lg py-1 px-2 flex items-center shadow-sm">
-                                        <img
-                                            src={`https://www.google.com/s2/favicons?domain=${
-                                                new URL(bookmark.url).hostname
-                                            }&sz=32`}
-                                            alt="favicon"
-                                            className="w-4 h-4 mr-1"
-                                        />
-                                        <span className="text-xs text-gray-700">
-                                            {new URL(
-                                                bookmark.url
-                                            ).hostname.replace("www.", "")}
-                                        </span>
-                                    </div>
-                                </div>
-
                                 <div className="p-4 flex-grow">
                                     <div className="flex justify-between items-start">
                                         <h3 className="text-lg font-semibold text-gray-800 mb-2 flex-1">
@@ -415,6 +372,32 @@ const Dashboard = () => {
                                         Delete
                                     </button>
                                 </div>
+                                {/* 
+                                {bookmark.fileUrl && (
+                                    <div className="mt-2 flex items-center text-sm text-indigo-600 hover:text-indigo-800">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="h-5 w-5 mr-1 text-gray-400"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth={2}
+                                                d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"
+                                            />
+                                        </svg>
+                                        <a
+                                            href={bookmark.fileUrl}
+                                            download
+                                            className="truncate"
+                                        >
+                                            {bookmark.fileUrl.split("/").pop()}
+                                        </a>
+                                    </div>
+                                )} */}
                             </div>
                         ))}
                     </div>

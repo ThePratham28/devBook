@@ -14,7 +14,10 @@ import {
 import { BiCategoryAlt } from "react-icons/bi";
 import { AiOutlineTags } from "react-icons/ai";
 
-const API_URL = "http://localhost:8080/api";
+const axiosInstance = axios.create({
+    baseURL: "http://localhost:8080/api",
+    withCredentials: true, // Ensures cookies are sent with requests
+});
 
 const CreateBookmark = () => {
     const navigate = useNavigate();
@@ -31,21 +34,22 @@ const CreateBookmark = () => {
     const [loading, setLoading] = useState(false);
     const [previewImage, setPreviewImage] = useState(null);
     const [loadingPreview, setLoadingPreview] = useState(false);
+    // const [file, setFile] = useState(null);
 
     // Fetch categories and tags
     const fetchMetadata = async () => {
         try {
             setLoading(true);
-            const token = localStorage.getItem("token");
-            const config = {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-            };
+            // const token = localStorage.getItem("token");
+            // const config = {
+            //     headers: {
+            //         Authorization: `Bearer ${token}`,
+            //     },
+            // };
 
             const [categoriesRes, tagsRes] = await Promise.all([
-                axios.get(`${API_URL}/categories`, config),
-                axios.get(`${API_URL}/tags`, config),
+                axiosInstance.get(`/categories`),
+                axiosInstance.get(`/tags`),
             ]);
 
             setAvailableCategories(categoriesRes.data.data);
@@ -66,14 +70,26 @@ const CreateBookmark = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        // Validate required fields
+        if (!title || !url) {
+            toast.error("Title and URL are required fields");
+            return;
+        }
+
+        // Validate category is selected
+        if (!categoryId) {
+            toast.error("Please select a category");
+            return;
+        }
+
         try {
             setLoading(true);
-            const token = localStorage.getItem("token");
-            const config = {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-            };
+            // const token = localStorage.getItem("token");
+            // const config = {
+            //     headers: {
+            //         Authorization: `Bearer ${token}`,
+            //     },
+            // };
 
             const payload = {
                 title,
@@ -85,7 +101,9 @@ const CreateBookmark = () => {
                 previewImage,
             };
 
-            await axios.post(`${API_URL}/bookmarks`, payload, config);
+            await axiosInstance.post(`/bookmarks`, payload);
+            // const bookmarkId = response.data.data.id; // Extract the newly created bookmark ID
+            // await handleFileUpload(bookmarkId); // Upload the file associated with the bookmark
             toast.success("Bookmark created successfully");
             navigate("/dashboard");
         } catch (error) {
@@ -112,8 +130,8 @@ const CreateBookmark = () => {
                 },
             };
 
-            const response = await axios.post(
-                `${API_URL}/categories`,
+            const response = await axiosInstance.post(
+                `/categories`,
                 { name: newCategory },
                 config
             );
@@ -142,23 +160,18 @@ const CreateBookmark = () => {
 
         try {
             setLoading(true);
-            const token = localStorage.getItem("token");
-            const config = {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-            };
 
-            const response = await axios.post(
-                `${API_URL}/tags`,
-                { name: newTag },
-                config
-            );
+            const response = await axiosInstance.post(`/tags`, {
+                name: newTag,
+            });
 
-            setAvailableTags([...availableTags, response.data.data]);
-            setTags([...tags, response.data.data.id]); // Automatically select the new tag
-            setNewTag("");
-            toast.success("Tag added successfully");
+            if (response.data && response.data.data) {
+                setAvailableTags([...availableTags, response.data.data]);
+                setTags([...tags, response.data.data.id.toString]);
+                setNewTag("");
+            } else {
+                throw new Error("Unexpected response format from server");
+            }
         } catch (error) {
             console.error("Error adding tag:", error);
             toast.error("Failed to add tag");
@@ -219,6 +232,29 @@ const CreateBookmark = () => {
         }
     };
 
+    // // Handle file upload
+    // const handleFileUpload = async (bookmarkId) => {
+    //     if (!file) return;
+
+    //     const formData = new FormData();
+    //     formData.append("file", file);
+
+    //     try {
+    //         await axiosInstance.post(
+    //             `/bookmarks/${bookmarkId}/upload`,
+    //             formData,
+    //             {
+    //                 headers: {
+    //                     "Content-Type": "multipart/form-data",
+    //                 },
+    //             }
+    //         );
+    //         toast.success("File uploaded successfully");
+    //     } catch (error) {
+    //         console.error("Error uploading file:", error);
+    //         toast.error("Failed to upload file");
+    //     }
+    // };
     // Display selected tags
     const selectedTagNames = availableTags
         .filter((tag) => tags.includes(tag.id.toString()))
@@ -669,6 +705,62 @@ const CreateBookmark = () => {
                                 </label>
                             </div>
                         </div>
+
+                        {/* Add this file upload section before the form submission buttons
+                        <div className="mt-4 bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                                Attachment
+                            </label>
+                            <div className="flex items-center space-x-2">
+                                <input
+                                    type="file"
+                                    onChange={(e) => setFile(e.target.files[0])}
+                                    className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
+                                />
+                                {file && (
+                                    <button
+                                        type="button"
+                                        onClick={() => setFile(null)}
+                                        className="inline-flex items-center p-1 border border-transparent rounded-full shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="h-4 w-4"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                        >
+                                            <path
+                                                fillRule="evenodd"
+                                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                clipRule="evenodd"
+                                            />
+                                        </svg>
+                                    </button>
+                                )}
+                            </div>
+                            {file && (
+                                <div className="mt-2 flex items-center text-sm text-gray-500">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-5 w-5 mr-1 text-gray-400"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"
+                                        />
+                                    </svg>
+                                    <span>
+                                        {file.name} (
+                                        {(file.size / 1024).toFixed(2)} KB)
+                                    </span>
+                                </div>
+                            )}
+                        </div> */}
 
                         <div className="pt-4 border-t border-gray-200 flex justify-end space-x-3">
                             <button

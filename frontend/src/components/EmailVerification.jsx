@@ -1,12 +1,10 @@
 // src/components/EmailVerification.jsx
 import { useEffect, useState } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
-import axios from "axios";
+import { useParams, Link } from "react-router-dom";
 
 const EmailVerification = () => {
     const { status } = useParams();
     const [message, setMessage] = useState("");
-    const navigate = useNavigate();
 
     useEffect(() => {
         // Get the message from URL search params

@@ -9,6 +9,8 @@ import Signup from "./components/Signup";
 import ForgotPassword from "./components/ForgotPassword";
 import ResetPassword from "./components/ResetPassword";
 import OAuthCallback from "./components/OAuthCallback";
+import EmailVerification from "./components/EmailVerification";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
     return (
@@ -22,24 +24,39 @@ function App() {
                         path="/forgot-password"
                         element={<ForgotPassword />}
                     />
-
                     <Route
                         path="/reset-password/:token"
                         element={<ResetPassword />}
                     />
                     <Route path="/auth/callback" element={<OAuthCallback />} />
+                    <Route
+                        path="/verify-email/:status"
+                        element={<EmailVerification />}
+                    />
 
                     {/* Dashboard and Bookmark Management */}
-                    <Route path="/dashboard" element={<Dashboard />} />
+
+                    <Route path="/dashboard" element={
+                        <ProtectedRoute>
+                            <Dashboard />
+                        </ProtectedRoute>
+                    } />
                     <Route
                         path="/create-bookmark"
-                        element={<CreateBookmark />}
+                        element={
+                            <ProtectedRoute>
+                                <CreateBookmark />
+                            </ProtectedRoute>
+                        }
                     />
                     <Route
                         path="/edit-bookmark/:id"
-                        element={<EditBookmark />}
+                        element={
+                            <ProtectedRoute>
+                                <EditBookmark />
+                            </ProtectedRoute>
+                        }
                     />
-
                     {/* Default Route */}
                     <Route path="/" element={<Login />} />
                 </Routes>
