@@ -1,12 +1,15 @@
 import { Op } from "sequelize";
 import models from "../models/model.js";
 import { getCache, setCache, invalidateCache } from "../utils/redisCache.js";
+import multer from "multer";
+import s3 from "../utils/zataS3.js";
 
 const { Bookmark, Tag, Category, BookmarkTag } = models;
 
 export const createBookmark = async (req, res) => {
     try {
-        const { title, url, description, isPublic, categoryId, tags } = req.body;
+        const { title, url, description, isPublic, categoryId, tags } =
+            req.body;
         const userId = req.user.id;
 
         // Validate category
@@ -29,9 +32,8 @@ export const createBookmark = async (req, res) => {
             categoryId,
         });
 
-        if (tags && tags.length > 0) {
-            await bookmark.addTags(tags);
-        }
+        const uniqueTagIds = [...new Set(tags.map((id) => Number(id)))];
+        await bookmark.addTags(uniqueTagIds);
 
         // Invalidate cache for bookmarks list
         await invalidateCache(`bookmarks:${userId}`);
@@ -199,7 +201,8 @@ export const updateBookmark = async (req, res) => {
     try {
         const { id } = req.params;
         const userId = req.user.id;
-        const { title, url, description, isPublic, categoryId, tags } = req.body;
+        const { title, url, description, isPublic, categoryId, tags } =
+            req.body;
 
         const bookmark = await Bookmark.findOne({
             where: { id, userId },
@@ -291,3 +294,48 @@ export const deleteBookmark = async (req, res) => {
         });
     }
 };
+
+const upload = multer();
+
+export const uploadBookmarkAttchment = [
+    upload.single("file"),
+    async (req, res) => {
+        try {
+            const { id } = req.params;
+            const userId = req.user.id;
+
+            // Validate bookmark ownership
+            const bookmark = await Bookmark.findOne({ where: { id, userId } });
+            if (!bookmark) {
+                return res.status(404).json({ error: "Bookmark not found" });
+            }
+            if (!req.file) {
+                return res.status(400).json({ error: "File is missing" });
+            }
+
+            const params = {
+                Bucket: process.env.ZATA_BUCKET_NAME,
+                Key: `${userId}/bookmarks/${id}/${req.file.originalname}`,
+                Body: req.file.buffer,
+            };
+            const uploadResult = await s3.upload(params).promise();
+
+            // Update bookmark with file URL
+            bookmark.fileUrl = uploadResult.Location;
+            await bookmark.save();
+
+            res.status(200).json({
+                success: true,
+                message: "File uploaded successfully",
+                fileUrl: uploadResult.Location,
+            });
+        } catch (error) {
+            console.error("Error uploading bookmark attachment:", error);
+            res.status(error.statusCode || 500).json({
+                success: false,
+                message:
+                    error.message || "Failed to upload bookmark attachment",
+            });
+        }
+    },
+];

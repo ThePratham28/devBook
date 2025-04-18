@@ -6,6 +6,7 @@ import {
     getBookmarkById,
     getBookmarks,
     updateBookmark,
+    uploadBookmarkAttchment,
 } from "../controllers/bookmark.controller.js";
 
 const router = Router();
@@ -15,5 +16,6 @@ router.get("/", authenticate, getBookmarks);
 router.get("/:id", authenticate, getBookmarkById);
 router.put("/:id", authenticate, updateBookmark);
 router.delete("/:id", authenticate, deleteBookmark);
+router.post("/:id/upload", authenticate, uploadBookmarkAttchment);
 
 export default router;

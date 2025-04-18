@@ -23,3 +23,61 @@
     at Layer.handle [as handle_request] (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\layer.js:95:5)
     at trim_prefix (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:328:13)
     at C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:286:9
+2025-04-17T10:58:43.822Z [ERROR]: Error: Invalid Credentials | Stack: Error: Invalid Credentials
+    at login (file:///C:/Users/Administrator/Desktop/devBook/backend/controllers/auth.controller.js:91:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-17T11:45:37.297Z [ERROR]: Error: Invalid Credentials | Stack: Error: Invalid Credentials
+    at login (file:///C:/Users/Administrator/Desktop/devBook/backend/controllers/auth.controller.js:91:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-17T11:47:12.424Z [ERROR]: Error: Route not found | Stack: Error: Route not found
+    at file:///C:/Users/Administrator/Desktop/devBook/backend/index.js:105:19
+    at Layer.handle [as handle_request] (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:280:10)
+    at requestLogger (file:///C:/Users/Administrator/Desktop/devBook/backend/middlewares/logging.middleware.js:8:5)
+    at Layer.handle [as handle_request] (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\Administrator\Desktop\devBook\backend\node_modules\express\lib\router\index.js:286:9
+2025-04-17T12:01:18.888Z [ERROR]: Error: Invalid Credentials | Stack: Error: Invalid Credentials
+    at login (file:///C:/Users/Administrator/Desktop/devBook/backend/controllers/auth.controller.js:95:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-17T12:01:43.272Z [ERROR]: Error: Invalid Credentials | Stack: Error: Invalid Credentials
+    at login (file:///C:/Users/Administrator/Desktop/devBook/backend/controllers/auth.controller.js:111:27)
+2025-04-17T12:15:27.492Z [ERROR]: Error: Failed to fetch categories | Stack: Error: Failed to fetch categories
+    at getAllCategories (file:///C:/Users/Administrator/Desktop/devBook/backend/controllers/category.controller.js:49:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-17T12:15:27.497Z [ERROR]: Error: Failed to fetch tags | Stack: Error: Failed to fetch tags
+    at getAllTags (file:///C:/Users/Administrator/Desktop/devBook/backend/controllers/tag.controller.js:44:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-17T12:15:27.505Z [ERROR]: Error: Failed to fetch tags | Stack: Error: Failed to fetch tags
+    at getAllTags (file:///C:/Users/Administrator/Desktop/devBook/backend/controllers/tag.controller.js:44:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-17T12:15:27.510Z [ERROR]: Error: Failed to fetch categories | Stack: Error: Failed to fetch categories
+    at getAllCategories (file:///C:/Users/Administrator/Desktop/devBook/backend/controllers/category.controller.js:49:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-17T12:15:27.514Z [ERROR]: Error: Failed to fetch tags | Stack: Error: Failed to fetch tags
+    at getAllTags (file:///C:/Users/Administrator/Desktop/devBook/backend/controllers/tag.controller.js:44:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-17T12:15:27.519Z [ERROR]: Error: Failed to fetch categories | Stack: Error: Failed to fetch categories
+    at getAllCategories (file:///C:/Users/Administrator/Desktop/devBook/backend/controllers/category.controller.js:49:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-17T12:15:27.523Z [ERROR]: Error: Failed to fetch tags | Stack: Error: Failed to fetch tags
+    at getAllTags (file:///C:/Users/Administrator/Desktop/devBook/backend/controllers/tag.controller.js:44:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-17T12:15:27.528Z [ERROR]: Error: Failed to fetch categories | Stack: Error: Failed to fetch categories
+    at getAllCategories (file:///C:/Users/Administrator/Desktop/devBook/backend/controllers/category.controller.js:49:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-17T12:15:27.533Z [ERROR]: Error: Failed to fetch tags | Stack: Error: Failed to fetch tags
+    at getAllTags (file:///C:/Users/Administrator/Desktop/devBook/backend/controllers/tag.controller.js:44:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-17T12:16:09.745Z [ERROR]: Error: Failed to fetch categories | Stack: Error: Failed to fetch categories
+    at getAllCategories (file:///C:/Users/Administrator/Desktop/devBook/backend/controllers/category.controller.js:49:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-17T12:16:09.757Z [ERROR]: Error: Failed to fetch tags | Stack: Error: Failed to fetch tags
+    at getAllTags (file:///C:/Users/Administrator/Desktop/devBook/backend/controllers/tag.controller.js:44:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-18T04:46:30.580Z [ERROR]: Error: Invalid Credentials | Stack: Error: Invalid Credentials
+    at login (file:///C:/Users/Administrator/Desktop/devBook/backend/controllers/auth.controller.js:95:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)

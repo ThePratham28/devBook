@@ -43,6 +43,10 @@ export default (sequelize) => {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false,
             },
+            fileUrl: {
+                type: DataTypes.STRING, 
+                allowNull: true,
+            },
         },
         {
             sequelize,
@@ -51,11 +55,6 @@ export default (sequelize) => {
                 { fields: ["userId"] }, // Index for filtering by user
                 { fields: ["categoryId"] }, // Index for filtering by category
                 { fields: ["createdAt"] }, // Index for sorting
-                {
-                    fields: ["title", "description"],
-                    using: "GIN",
-                    operator: "gin_trgm_ops",
-                }, // Full-text search index
             ],
         }
     );

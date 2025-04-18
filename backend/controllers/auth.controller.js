@@ -61,6 +61,9 @@ export const verifyEmail = async (req, res, next) => {
         });
 
         if (!user) {
+            res.redirect(
+                `${process.env.CLIENT_URL}/verify-email/error?message=Invalid or expired verification token`
+            );
             const error = new Error("Invalid or expired verification token");
             error.statusCode = 400;
             throw error;
@@ -73,11 +76,12 @@ export const verifyEmail = async (req, res, next) => {
 
         await welcomeEmail(user.email, user.name);
 
-        res.status(200).json({
-            success: true,
-            message: "Email verified successfully, you can now login",
-        });
+        res.redirect(`${process.env.CLIENT_URL}/verify-email/success`);
     } catch (error) {
+        res.redirect(
+            `${process.env.CLIENT_URL}/verify-email/error?message=${error.message}`
+        );
+
         next(error);
     }
 };
